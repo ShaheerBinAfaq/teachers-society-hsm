@@ -10,6 +10,7 @@
     @endif
     </div>
     <h1 class="display-3">Members</h1>  
+    <style>h1{text-align:center}</style>
     <div>
     <a style="margin: 19px;" href="{{ route('members.create')}}" class="btn btn-primary">New Member</a>
     </div>  

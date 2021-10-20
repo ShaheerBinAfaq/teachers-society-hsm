@@ -93,7 +93,7 @@ class MembersController extends Controller
             'fathers_name'=>'required',
             'occupation'=>'required',
             'address'=>'required',
-            'phone'=>'required'
+            'phone'=>'required|string'
         ]);
         // $contact = Contact::find($id);
         $member->name = $request->get('name');

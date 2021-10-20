@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 Route::resource('members', 'MembersController');
 Route::view('/bill', 'bills/index');
+Route::view('/transfer', 'bills/transfer');

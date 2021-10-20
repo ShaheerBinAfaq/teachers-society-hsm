@@ -17,7 +17,7 @@ class CreateTransfersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('member_id')->unsigned();
-            $table->string('');
+            $table->string('transfree_id')->unsigned();
         });
     }
 

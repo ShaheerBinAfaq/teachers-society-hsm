@@ -1,6 +1,8 @@
 @extends('base') 
 @section('main')
 <div class="row">
+<img src="teacher.jfif" alt="teacher" width="1000px"  style="display: block; margin-left: auto;margin-right:auto;">
+
     <div class="col-sm-8 offset-sm-2">
         <h1 class="display-3">Update a member</h1>
         @if ($errors->any())
@@ -30,15 +32,15 @@
             </div>
             <div class="form-group">
             <label for="occupation">Occupation:</label>
-                <input type="text" class="form-control" name="occupation" value={{ $member->occupation }} />
+            <textarea class="form-control" name="occupation">{{ $member->occupation }}</textarea>
             </div>
             <div class="form-group">
             <label for="address">Address:</label>
-                <input type="text" class="form-control" name="address" value={{ $member->address }} />
+                <textarea class="form-control" name="address">{{ $member->address }}</textarea>
             </div>
             <div class="form-group">
             <label for="phone">Phone:</label>
-                <input type="text" class="form-control" name="phone" value={{ $member->phone }} />
+                <input type="tel" class="form-control" name="phone" value={{ $member->phone }} />
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
