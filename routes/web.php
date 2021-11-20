@@ -17,5 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('members', 'MembersController');
+Route::resource('transfer', 'transferController');
 Route::view('/bill', 'bills/index');
-Route::view('/transfer', 'bills/transfer');
+//Route::view('/transfer', 'bills/transfer');
