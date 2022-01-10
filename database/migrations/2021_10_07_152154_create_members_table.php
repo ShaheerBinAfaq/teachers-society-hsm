@@ -22,6 +22,8 @@ class CreateMembersTable extends Migration
             $table->string('occupation');
             $table->text('address');
             $table->string('phone');
+            $table->string('email');
+            $table->string('msid');
         });
     }
 

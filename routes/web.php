@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 Route::resource('members', 'MembersController');
 Route::resource('transfer', 'transferController');
-Route::view('/bill', 'bills/index');
+Route::resource('bill', 'BillController');
+Route::resource('due', 'DueController');
+//Route::view('bill', 'BillController');
 //Route::view('/transfer', 'bills/transfer');

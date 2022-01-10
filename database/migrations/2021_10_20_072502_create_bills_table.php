@@ -17,6 +17,7 @@ class CreateBillsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('transfer_id');
+            $table->bigInteger('member_id');
             $table->bigInteger('admission_fee_amount');
             $table->bigInteger('admission_fee_received');
             $table->bigInteger('admission_fee_balance');
@@ -50,7 +51,6 @@ class CreateBillsTable extends Migration
             $table->bigInteger('cost_of_forms_received');
             $table->bigInteger('cost_of_forms_balance');
             $table->bigInteger('ledger_account_no');
-            
         });
     }
 

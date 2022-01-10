@@ -69,9 +69,9 @@ $(document).ready( function () {
 </head>
 <body>
   <div class="topnav">
-  <a href="../members">Members</a>
-  <a href="../transfer">Transfers</a>
-  <a href="../bill">Bills</a>
+  <a href="http://localhost:8000/members">Members</a>
+  <a href="http://localhost:8000/transfer">Transfers</a>
+  <a href="http://localhost:8000/bill/create">Bills</a>
 </div>
   <div class="container">
     @yield('main')

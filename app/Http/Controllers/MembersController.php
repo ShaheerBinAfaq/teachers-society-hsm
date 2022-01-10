@@ -40,9 +40,10 @@ class MembersController extends Controller
             'name'=>'required',
             'cnic'=>'required',
             'fathers_name'=>'required',
-            'occupation'=>'required',
             'address'=>'required',
-            'phone'=>'required'
+            'phone'=>'required',
+            'email'=>'required',
+            'msid'=>'required'
         ]);
         $member = new Member([
             'name' => $request->get('name'),
@@ -50,7 +51,9 @@ class MembersController extends Controller
             'fathers_name' => $request->get('fathers_name'),
             'occupation' => $request->get('occupation'),
             'address' => $request->get('address'),
-            'phone' => $request->get('phone')
+            'phone' => $request->get('phone'),
+            'email' => $request->get('email'),
+            'msid' => $request->get('msid')
         ]);
         $member->save();
         return redirect('/members')->with('success', 'Member saved!');
@@ -91,7 +94,6 @@ class MembersController extends Controller
             'name'=>'required',
             'cnic'=>'required',
             'fathers_name'=>'required',
-            'occupation'=>'required',
             'address'=>'required',
             'phone'=>'required|string'
         ]);
@@ -102,6 +104,8 @@ class MembersController extends Controller
         $member->occupation = $request->get('occupation');
         $member->address = $request->get('address');
         $member->phone = $request->get('phone');
+        $member->email = $request->get('email');
+        $member->msid = $request->get('msid');
         $member->save();
         return redirect('/members')->with('success', 'Member updated!');
     }

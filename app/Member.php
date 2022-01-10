@@ -12,6 +12,9 @@ class Member extends Model
         'fathers_name',
         'occupation',
         'address',
-        'phone'     
+        'phone',
+        'email',
+        'msid',
+        'status'    
     ];
 }

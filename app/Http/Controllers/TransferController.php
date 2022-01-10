@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\transfer;
+use App\Member;
 use Illuminate\Http\Request;
 
 class TransferController extends Controller
@@ -14,8 +15,9 @@ class TransferController extends Controller
      */
     public function index()
     {
+        $members = Member::all();
         $transfers = transfer::all();
-        return view('transfers.index', compact('transfers'));
+        return view('transfers.index', compact('transfers', 'members'));
     }
 
     /**
@@ -25,7 +27,8 @@ class TransferController extends Controller
      */
     public function create()
     {
-        return view('transfers.create');
+        $members = Member::all();
+        return view('transfers.create', compact('members'));
     }
 
     /**
@@ -39,13 +42,28 @@ class TransferController extends Controller
         $request->validate([
             'member_id'=>'required',
             'transfree_id'=>'required',
+            'plot_category'=>'required',
+            'plot_no'=>'required'
         ]);
         $transfer = new transfer([
             'member_id' => $request->get('member_id'),
-            'transfree_id' => $request->get('transfree_id')        
+            'transfree_id' => $request->get('transfree_id'),
+            'plot_category' => $request->get('plot_category'),
+            'plot_no' => $request->get('plot_no'),
+            'msid' => $request->get('msid'),
+            'dei' => $request->get('dei'),
+            'survey' => $request->get('survey'),
+            'phase' => $request->get('phase'),
+            'block' => $request->get('block')
         ]);
         $transfer->save();
-        return redirect('/transfer')->with('success', 'transfer saved!');
+
+        // transfering msid
+        $member = Member::find($request->get('transfree_id'));
+        $member->msid = $request->get('msid');
+        $member->save();
+        // $message = 'transfer saved! ' + $request->get('msid');
+        return redirect('/transfer')->with('success', 'transfer saved! ');
     }
 
     /**

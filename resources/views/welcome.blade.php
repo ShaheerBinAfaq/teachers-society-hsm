@@ -42,7 +42,7 @@ function validate()
 </head>
 <body>
     <center><h1>ADMIN</h1></center>
-    <form action="admin.html" method="post" >
+    <form action="admin.html" method="get" >
         <center>
         <table>        
             <div> 

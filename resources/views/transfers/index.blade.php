@@ -14,22 +14,29 @@
     <div>
     <a style="margin: 19px;" href="{{ route('transfer.create')}}" class="btn btn-primary">New transfer</a>
     </div>  
-    <input type="search" id="search">
   <table class="table table-striped display">
     <thead>
         <tr>
-          <td>ID</td>
-          <td>member_id</td>
-          <td>transfree_id</td>          
+          <td>MSID</td>
+          <td>member</td>
+          <td>transfree</td>          
           <td>Actions</td>
         </tr>
     </thead>
     <tbody>
         @foreach($transfers as $transfer)
         <tr>
-            <td>{{$transfer->id}}</td>
-            <td>{{$transfer->member_id}}</td>
-            <td>{{$transfer->transfree_id}}</td>
+            <td>{{$transfer->msid}}</td>
+            @foreach ($members as $member)
+              @if ($transfer->member_id == $member->id)
+                <td>{{($member->name)}}</td>
+              @endif
+            @endforeach
+            @foreach ($members as $member)
+              @if ($transfer->transfree_id == $member->id)
+                <td>{{($member->name)}}</td>
+              @endif
+            @endforeach
             <td>
                 <a href="{{ route('transfer.edit',$transfer)}}" class="btn btn-primary">Edit</a>
             

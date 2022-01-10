@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
 {
-    protected $fillabe = [
+    protected $fillable = [
         'transfer_id',
         'admission_fee_amount',
         'admission_fee_received',
