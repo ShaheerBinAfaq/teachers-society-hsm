@@ -2,24 +2,6 @@
 @section('main')
 
 <script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
 function fnStatusFilter() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("statusFilter");
@@ -62,7 +44,6 @@ function fnStatusFilter() {
     <a style="margin: 19px;" href="{{ route('members.create')}}" class="btn btn-primary">New Member</a>
     </div>
     <div>
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
       <select id="statusFilter" onchange="fnStatusFilter()">
         <option value="Show all">Show all</option>
         <option value="Defaulter">Defaulter</option>
@@ -98,6 +79,7 @@ function fnStatusFilter() {
                 <a href="{{ route('members.edit',$member)}}" class="btn btn-primary">Edit</a>
                 <!-- <a href="{{ route('due.create',$member->id)}}" class="btn btn-primary">Dues</a> -->
                 <a href="http://localhost:8000/due/create?mid={{$member->id}}" class="btn btn-primary">Dues</a>
+                <a href="http://localhost:8000/bill/create?mid={{$member->id}}" class="btn btn-primary">Bill</a>
            
                 <form action="{{ route('members.destroy', $member)}}" method="post">
                   @csrf

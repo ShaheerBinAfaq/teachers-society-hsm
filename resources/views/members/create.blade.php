@@ -78,6 +78,55 @@ text-align: center;
             <label for="msid">MS ID</label>
             <input type="number" class="form-control" name="msid">
           </div>
+          <br>
+          <div>
+            <label for="dei">DEI:</label>
+            <select name="dei" id="dei">
+              <option value="SELECT DEI">SELECT DEI</option>
+              <option value="ALLAH PAI">ALLAH PAI</option>
+              <option value="SHAHI CHIB">SHAHI CHIB</option>
+              <option value="LOHAR KOLANG">LOHAR KOLANG</option>
+              
+            </select>
+          </div>
+          <br>
+          <div>
+            <label for="survey">SURVEY:</label>
+            <select name="survey" id="survey">
+                <option value="select survey">SELECT SURVEY</option>
+                <option value="15">15</option>
+                <option value="124">124</option>
+                <option value="125">125</option>
+            </select>
+        </div>
+        <br>
+        <div>
+          <label for="phase">PHASE:</label>
+          <select name="phase" id="phase">
+              <option value="select phase">SELECT PHASE</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <label for="block">BLOCK:</label>
+          <select name="block" id="block">
+              <option value="select block">SELECT BLOCK</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+          </select>
+        </div>
+        <br>
+        <div>
+        <label for="plot_category">PLOT CATEGORY</label>
+        <input type="text" name="plot_category" id="plot_category" required> <small>yds</small>
+        </div>
+        <br>
+        <div>
+          <label for="plot_no">PLOT NO:</label>
+          <input type="number" name="plot_no" id="plot_no" required>
+        </div>
           <button type="submit" >Add Member</button>
           </center>
       </form>

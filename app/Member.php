@@ -15,6 +15,10 @@ class Member extends Model
         'phone',
         'email',
         'msid',
-        'status'    
+        'status',
+        'dei',
+        'survey',
+        'phase',
+        'block'    
     ];
 }

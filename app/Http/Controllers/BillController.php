@@ -76,7 +76,7 @@ class BillController extends Controller
         // 'ledger_account_no'=>'required'
         // ]);
         $bill = new Bill([
-            'transfer_id' => $request->get('transfer_id'),
+            'member_id' => $request->get('member_id'),
         'admission_fee_amount' => $request->get('admission_fee_amount'),
         'admission_fee_received' => $request->get('admission_fee_received'),
         'admission_fee_balance' => $request->get('admission_fee_balance'),
@@ -146,42 +146,42 @@ class BillController extends Controller
      */
     public function update(Request $request, Bill $bill)
     {
-        $request->validate([
-            'transfer_id'=>'required',
-        'admission_fee_amount'=>'required',
-        'admission_fee_received'=>'required',
-        'admission_fee_balance'=>'required',
-        'share_money_amount'=>'required',
-        'share_money_received'=>'required',
-        'share_money_balance'=>'required',
-        'cost_of_land_amount'=>'required',
-        'cost_of_land_received'=>'required',
-        'cost_of_land_balance'=>'required',
-        'cost_of_corner_amount'=>'required',
-        'cost_of_corner_received'=>'required',
-        'cost_of_corner_balance'=>'required',
-        'lease_documentation_amount'=>'required',
-        'lease_documentation_received'=>'required',
-        'lease_documentation_balance'=>'required',
-        'cost_of_development_amount'=>'required',
-        'cost_of_development_received'=>'required',
-        'cost_of_development_balance'=>'required',
-        'cost_of_transfer_amount'=>'required',
-        'cost_of_transfer_received'=>'required',
-        'cost_of_transfer_balance'=>'required',
-        'from'=>'required',
-        'vide_account_no'=>'required',
-        'establishment_charges_amount'=>'required',
-        'establishment_charges_received'=>'required',
-        'establishment_charges_balance'=>'required',
-        'miscellaneous_amount'=>'required',
-        'miscellaneous_received'=>'required',
-        'miscellaneous_balance'=>'required',
-        'cost_of_forms_amount'=>'required',
-        'cost_of_forms_received'=>'required',
-        'cost_of_forms_balance'=>'required',
-        'ledger_account_no'=>'required'
-        ]);
+        // $request->validate([
+        //     'transfer_id'=>'required',
+        //     'admission_fee_amount'=>'required',
+        //     'admission_fee_received'=>'required',
+        //     'admission_fee_balance'=>'required',
+        //     'share_money_amount'=>'required',
+        //     'share_money_received'=>'required',
+        //     'share_money_balance'=>'required',
+        //     'cost_of_land_amount'=>'required',
+        //     'cost_of_land_received'=>'required',
+        //     'cost_of_land_balance'=>'required',
+        //     'cost_of_corner_amount'=>'required',
+        //     'cost_of_corner_received'=>'required',
+        //     'cost_of_corner_balance'=>'required',
+        //     'lease_documentation_amount'=>'required',
+        //     'lease_documentation_received'=>'required',
+        //     'lease_documentation_balance'=>'required',
+        //     'cost_of_development_amount'=>'required',
+        //     'cost_of_development_received'=>'required',
+        //     'cost_of_development_balance'=>'required',
+        //     'cost_of_transfer_amount'=>'required',
+        //     'cost_of_transfer_received'=>'required',
+        //     'cost_of_transfer_balance'=>'required',
+        //     'from'=>'required',
+        //     'vide_account_no'=>'required',
+        //     'establishment_charges_amount'=>'required',
+        //     'establishment_charges_received'=>'required',
+        //     'establishment_charges_balance'=>'required',
+        //     'miscellaneous_amount'=>'required',
+        //     'miscellaneous_received'=>'required',
+        //     'miscellaneous_balance'=>'required',
+        //     'cost_of_forms_amount'=>'required',
+        //     'cost_of_forms_received'=>'required',
+        //     'cost_of_forms_balance'=>'required',
+        //     'ledger_account_no'=>'required'
+        // ]);
         
             $bill->transfer_id = $request->get('transfer_id');
         $bill->admission_fee_amount  = $request->get('admission_fee_amount');

@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script>
-        $(document).ready(function()
+$(document).ready(function()
 {
     $("#admission_fee_received").change(function()
     {
@@ -69,7 +69,30 @@
         var fileName = $('#fileName').val();
         var worker = html2pdf().from(document.getElementById('receiptbody')).save(fileName);
     });
+
+    //setting all number values to 0
+    var inputElemArr = document.getElementsByTagName('input');
+    for(let i=0; i<inputElemArr.length; i++ ){
+        if(inputElemArr[i].getAttribute('type') == 'number') {
+            inputElemArr[i].value = 0;
+        }
+    }
+
+    setDefaultBalance();
 });
+
+function setDefaultBalance() {
+    $("#admission_fee_balance").val($("#admission_fee_amount").val() - $("#admission_fee_received").val());
+    $("#share_money_balance").val($("#share_money_amount").val() - $("#share_money_received").val());
+    $("#cost_of_land_balance").val($("#cost_of_land_amount").val() - $("#cost_of_land_received").val());
+    $("#cost_of_corner_balance").val($("#cost_of_corner_amount").val() - $("#cost_of_corner_received").val());
+    $("#lease_documentation_balance").val($("#lease_documentation_amount").val() - $("#lease_documentation_received").val());
+    $("#cost_of_development_balance").val($("#cost_of_development_amount").val() - $("#cost_of_development_received").val());
+    $("#cost_of_transfer_balance").val($("#cost_of_transfer_amount").val() - $("#cost_of_transfer_received").val());
+    $("#establishment_charges_balance").val($("#establishment_charges_amount").val() - $("#establishment_charges_received").val());
+    $("#miscellaneous_balance").val($("#miscellaneous_amount").val() - $("#miscellaneous_received").val());
+    $("#cost_of_forms_balance").val($("#cost_of_forms_amount").val() - $("#cost_of_forms_received").val());
+}
     </script> 
    
     <style type="text/css">
@@ -81,14 +104,14 @@
             margin: 20px;
         }
         #container{
-text-align: center;
+            text-align: center;
         }
 
     </style>
    
 </head>
 <body>
-<form method="post" action="">
+<form method="post" action="{{ route('bill.store') }}">
 <div><center><h1>RECEIPT</h1></center>
     <div id="receiptbody">
     <center>
@@ -170,9 +193,9 @@ text-align: center;
                 <div>
                     <tr>
                         <td>FROM MR/MRS/MISS</td><br>
-                        <td><label for="mr"><input type="radio" name="from" id="mr" required>MR</label><br>
-                        <label for="mrs"> <input type="radio" name="from" id="mrs" required>MRS</label><br>
-                        <label for="miss"><input type="radio" name="from" id="miss" required>MISS</label><br>
+                        <td><label for="mr"><input type="radio"  id="mr" required>MR</label><br>
+                        <label for="mrs"> <input type="radio"  id="mrs" required>MRS</label><br>
+                        <label for="miss"><input type="radio"  id="miss" required>MISS</label><br>
                         <input type="text" name="from" id="from" placeholder="enter name"></td>
                     </tr>
                 </div>

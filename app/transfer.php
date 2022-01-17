@@ -15,6 +15,7 @@ class transfer extends Model
         'dei',
         'survey',
         'phase',
-        'block'  
+        'block' ,
+        'tran_no' 
     ];
 }

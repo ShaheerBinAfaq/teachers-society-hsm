@@ -53,7 +53,11 @@ class MembersController extends Controller
             'address' => $request->get('address'),
             'phone' => $request->get('phone'),
             'email' => $request->get('email'),
-            'msid' => $request->get('msid')
+            'msid' => $request->get('msid'),
+            'dei' => $request->get('dei'),
+            'survey' => $request->get('survey'),
+            'phase' => $request->get('phase'),
+            'block' => $request->get('block')
         ]);
         $member->save();
         return redirect('/members')->with('success', 'Member saved!');

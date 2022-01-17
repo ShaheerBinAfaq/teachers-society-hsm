@@ -77,7 +77,7 @@ text-align: center;
                 @endforeach
               </select>
           <br>
-              <label for="dei">DEI:</label>
+              <!-- <label for="dei">DEI:</label>
         <select name="dei" id="dei">
             <option value="SELECT DEI">SELECT DEI</option>
             <option value="ALLAH PAI">ALLAH PAI</option>
@@ -133,7 +133,7 @@ text-align: center;
         <label for="plot_no">PLOT NO:</label>
         <input type="number" name="plot_no" id="plot_no" required>
         
-          </div>
+          </div> -->
           
           <button type="submit" class="btn btn-primary-outline">Add Transfer</button>
       </form>

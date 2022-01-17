@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\transfer;
 use App\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TransferController extends Controller
 {
@@ -39,27 +40,33 @@ class TransferController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'member_id'=>'required',
-            'transfree_id'=>'required',
-            'plot_category'=>'required',
-            'plot_no'=>'required'
-        ]);
+        // $request->validate([
+        //     'member_id'=>'required',
+        //     'transfree_id'=>'required',
+        //     'plot_category'=>'required',
+        //     'plot_no'=>'required'
+        // ]);
+
+        $member = Member::find($request->get('transfree_id'));
+        //$member = DB::table('members')->where('id', $request->get('transfree_id'))->first();
+        //$prevTransfer = Transfer::find($request->get('msid'));
+        $prevTransfer = DB::table('transfers')->orderBy('created_at', 'desc')->where('msid', $request->get('msid'))->first();
+
         $transfer = new transfer([
             'member_id' => $request->get('member_id'),
             'transfree_id' => $request->get('transfree_id'),
-            'plot_category' => $request->get('plot_category'),
-            'plot_no' => $request->get('plot_no'),
+            //'plot_category' => $request->get('plot_category'),
+            //'plot_no' => $request->get('plot_no'),
             'msid' => $request->get('msid'),
-            'dei' => $request->get('dei'),
-            'survey' => $request->get('survey'),
-            'phase' => $request->get('phase'),
-            'block' => $request->get('block')
+            'dei' => $member->dei,
+            'survey' => $member->survey,
+            'phase' => $member->phase,
+            'block' => $member->block,
+            'tran_no' => $prevTransfer->tran_no + 1
         ]);
         $transfer->save();
 
         // transfering msid
-        $member = Member::find($request->get('transfree_id'));
         $member->msid = $request->get('msid');
         $member->save();
         // $message = 'transfer saved! ' + $request->get('msid');
