@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bill</title>
+    <title>Bill</title>
     <script src="bills.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -71,14 +71,14 @@ $(document).ready(function()
     });
 
     //setting all number values to 0
-    var inputElemArr = document.getElementsByTagName('input');
-    for(let i=0; i<inputElemArr.length; i++ ){
-        if(inputElemArr[i].getAttribute('type') == 'number') {
-            inputElemArr[i].value = 0;
-        }
-    }
+    // var inputElemArr = document.getElementsByTagName('input');
+    // for(let i=0; i<inputElemArr.length; i++ ){
+    //     if(inputElemArr[i].getAttribute('type') == 'number') {
+    //         inputElemArr[i].value = 0;
+    //     }
+    // }
 
-    setDefaultBalance();
+    //setDefaultBalance();
 });
 
 function setDefaultBalance() {
@@ -112,15 +112,13 @@ function setDefaultBalance() {
 </head>
 <body>
 <form method="post" action="{{ route('bill.store') }}">
+    @csrf
 <div><center><h1>RECEIPT</h1></center>
     <div id="receiptbody">
     <center>
         <label for="member_id">Member:</label>
             <select name="member_id" id="select_member_id">
-            <option value=""></option>
-            @foreach($members as $member)
             <option value="{{$member->id}}" msid="{{$member->msid}}">{{$member->name}}</option>
-            @endforeach
             </select>
     <table>
         <div>
@@ -136,9 +134,9 @@ function setDefaultBalance() {
                 <div>
                 <tr>
                     <td>ADMISSION FEE </td>
-                    <td><input type="number" name="admission_fee_amount" id="admission_fee_amount"></td>
-                    <td><input type="number" name="admission_fee_received" id="admission_fee_received"></td>
-                    <td><input type="text" name="admission_fee_balance" id="admission_fee_balance" readonly></td>
+                    <td><input type="number" name="admission_fee_amount" id="admission_fee_amount" value="{{ $bill->admission_fee_amount }}"></td>
+                    <td><input type="number" name="admission_fee_received" id="admission_fee_received" value="{{ $bill->admission_fee_received }}"></td>
+                    <td><input type="text" name="admission_fee_balance" id="admission_fee_balance" readonly value="{{ $bill->admission_fee_balance }}"></td>
                 </tr>
                 </div>
                 <div>
@@ -193,9 +191,10 @@ function setDefaultBalance() {
                 <div>
                     <tr>
                         <td>FROM MR/MRS/MISS</td><br>
-                        <td><label for="mr"><input type="radio"  id="mr" required>MR</label><br>
+                        <td>
+                        <!-- <td><label for="mr"><input type="radio"  id="mr" required>MR</label><br>
                         <label for="mrs"> <input type="radio"  id="mrs" required>MRS</label><br>
-                        <label for="miss"><input type="radio"  id="miss" required>MISS</label><br>
+                        <label for="miss"><input type="radio"  id="miss" required>MISS</label><br> -->
                         <input type="text" name="from" id="from" placeholder="enter name"></td>
                     </tr>
                 </div>
@@ -240,13 +239,14 @@ function setDefaultBalance() {
             </tbody>
         </div>
     </table>
-    <br><input type="text" id="fileName" placeholder="Enter File Name" required class=button>
+    <!-- <br><input type="text" id="fileName" placeholder="Enter File Name" class=button> -->
     </center>
     </div>
     <br>
     <div id="container">
         <!-- <button type="print_invoice" id="btnpdf">GET INVOICE</button> -->
-        <input type="button" value="GET INVOICE" id="btnpdf" class="button">
+        <!-- <input type="button" value="GET INVOICE" id="btnpdf" class="button"> -->
+        <button type="submit" class="button" >Save Bill</button>
       </div>
     </form>
 </body>

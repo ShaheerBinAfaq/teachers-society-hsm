@@ -8,6 +8,7 @@ class Bill extends Model
 {
     protected $fillable = [
         'transfer_id',
+        'member_id',
         'admission_fee_amount',
         'admission_fee_received',
         'admission_fee_balance',

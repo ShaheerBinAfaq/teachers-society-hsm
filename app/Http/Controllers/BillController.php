@@ -25,10 +25,13 @@ class BillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($member)
     {
-        $members = Member::all();
-        return view('bills.create', compact('members'));
+        //$members = Member::all();
+        //$bill = DB::table('bills')->orderBy('created_at', 'desc')->where('member_id', $member->id)->first();
+        $bill = Bill::all();
+
+        return view('bills.create', compact('member', 'bill'));
     }
 
     /**
@@ -132,9 +135,10 @@ class BillController extends Controller
      * @param  \App\Bill  $bill
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bill $bill)
+    public function edit($memberid)
     {
-        return view('bills.edit', compact('bill'));    
+        $member = Member::find($memberid);
+        return view('bills.create', compact('member'));    
     }
 
     /**
