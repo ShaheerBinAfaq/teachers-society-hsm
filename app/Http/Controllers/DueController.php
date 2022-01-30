@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Due;
 use App\Member;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 class DueController extends Controller
@@ -85,9 +87,11 @@ class DueController extends Controller
      * @param  \App\Due  $due
      * @return \Illuminate\Http\Response
      */
-    public function edit(Due $due)
+    public function edit($memberid)
     {
-        //
+        $member = Member::find($memberid);
+        $bills = DB::table('bills')->orderBy('created_at', 'desc')->where('member_id', $member->id)->get();
+        return view('report.index', compact('member', 'bills')); 
     }
 
     /**
@@ -111,5 +115,11 @@ class DueController extends Controller
     public function destroy(Due $due)
     {
         //
+    }
+    public function report($memberid)
+    {
+        $member = Member::find($memberid);
+        $bills = DB::table('bills')->orderBy('created_at', 'desc')->where('member_id', $member->id)->get();
+        return view('report.index', compact('member', 'bills')); 
     }
 }

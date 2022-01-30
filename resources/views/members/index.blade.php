@@ -77,8 +77,8 @@ function fnStatusFilter() {
             <td>{{$member->status}}</td>
             <td>
                 <a href="{{ route('members.edit',$member)}}" class="btn btn-primary">Edit</a>
-                <!-- <a href="{{ route('due.create',$member->id)}}" class="btn btn-primary">Dues</a> -->
-                <a href="http://localhost:8000/due/create?mid={{$member->id}}" class="btn btn-primary">Dues</a>
+                <a href="{{ route('due.edit',$member->id)}}" class="btn btn-primary">Report</a>
+                <!-- <a href="/report" class="btn btn-primary">Report</a> -->
                 <a href="{{ route('bill.edit',$member->id)}}" class="btn btn-primary">Bills</a>
                 <!-- <a href="http://localhost:8000/bill/create?mid={{$member->id}}" class="btn btn-primary">Bill</a> -->
            

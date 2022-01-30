@@ -14,53 +14,53 @@
     <script>
 $(document).ready(function()
 {
-    $("#admission_fee_received").change(function()
+    $("#admission_fee_received").blur(function()
     {
         $("#admission_fee_balance").val($("#admission_fee_amount").val() - $("#admission_fee_received").val());
 
     });
-    $("#share_money_received").change(function()
+    $("#share_money_received").blur(function()
     {
         $("#share_money_balance").val($("#share_money_amount").val() - $("#share_money_received").val());
 
     });
-    $("#cost_of_land_received").change(function()
+    $("#cost_of_land_received").blur(function()
     {
         $("#cost_of_land_balance").val($("#cost_of_land_amount").val() - $("#cost_of_land_received").val());
 
     });
-    $("#cost_of_corner_received").change(function()
+    $("#cost_of_corner_received").blur(function()
     {
         $("#cost_of_corner_balance").val($("#cost_of_corner_amount").val() - $("#cost_of_corner_received").val());
 
     });
     
-    $("#lease_documentation_received").change(function()
+    $("#lease_documentation_received").blur(function()
     {
         $("#lease_documentation_balance").val($("#lease_documentation_amount").val() - $("#lease_documentation_received").val());
 
     });
-    $("#cost_of_development_received").change(function()
+    $("#cost_of_development_received").blur(function()
     {
         $("#cost_of_development_balance").val($("#cost_of_development_amount").val() - $("#cost_of_development_received").val());
 
     });
-    $("#cost_of_transfer_received").change(function()
+    $("#cost_of_transfer_received").blur(function()
     {
         $("#cost_of_transfer_balance").val($("#cost_of_transfer_amount").val() - $("#cost_of_transfer_received").val());
 
     });
-    $("#establishment_charges_received").change(function()
+    $("#establishment_charges_received").blur(function()
     {
         $("#establishment_charges_balance").val($("#establishment_charges_amount").val() - $("#establishment_charges_received").val());
 
     });
-    $("#miscellaneous_received").change(function()
+    $("#miscellaneous_received").blur(function()
     {
         $("#miscellaneous_balance").val($("#miscellaneous_amount").val() - $("#miscellaneous_received").val());
 
     });
-    $("#cost_of_forms_received").change(function()
+    $("#cost_of_forms_received").blur(function()
     {
         $("#cost_of_forms_balance").val($("#cost_of_forms_amount").val() - $("#cost_of_forms_received").val());
 
@@ -71,14 +71,24 @@ $(document).ready(function()
     });
 
     //setting all number values to 0
-    // var inputElemArr = document.getElementsByTagName('input');
-    // for(let i=0; i<inputElemArr.length; i++ ){
-    //     if(inputElemArr[i].getAttribute('type') == 'number') {
-    //         inputElemArr[i].value = 0;
-    //     }
-    // }
+    var inputElemArr = document.getElementsByTagName('input');
+    for(let i=0; i<inputElemArr.length; i++ ){
+        if(inputElemArr[i].getAttribute('type') == 'number' && inputElemArr[i].value == '') {
+            inputElemArr[i].value = 0;
+        }
+    }
 
-    //setDefaultBalance();
+    
+
+    //populating inputs a/c to db
+    @if(count((array)$bill))
+    $("#admission_fee_amount").val({{ $bill->admission_fee_amount }});
+    $("#admission_fee_received").val({{ $bill->admission_fee_received }});
+    $("#admission_fee_balance").val({{ $bill->admission_fee_balance }});
+
+    @else
+    @endif
+    setDefaultBalance();
 });
 
 function setDefaultBalance() {
@@ -134,9 +144,9 @@ function setDefaultBalance() {
                 <div>
                 <tr>
                     <td>ADMISSION FEE </td>
-                    <td><input type="number" name="admission_fee_amount" id="admission_fee_amount" value="{{ $bill->admission_fee_amount }}"></td>
-                    <td><input type="number" name="admission_fee_received" id="admission_fee_received" value="{{ $bill->admission_fee_received }}"></td>
-                    <td><input type="text" name="admission_fee_balance" id="admission_fee_balance" readonly value="{{ $bill->admission_fee_balance }}"></td>
+                    <td><input type="number" name="admission_fee_amount" id="admission_fee_amount"></td>
+                    <td><input type="number" name="admission_fee_received" id="admission_fee_received"></td>
+                    <td><input type="text" name="admission_fee_balance" id="admission_fee_balance" readonly></td>
                 </tr>
                 </div>
                 <div>

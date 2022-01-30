@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bill;
 use App\Member;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -27,11 +28,12 @@ class BillController extends Controller
      */
     public function create($member)
     {
-        //$members = Member::all();
-        //$bill = DB::table('bills')->orderBy('created_at', 'desc')->where('member_id', $member->id)->first();
-        $bill = Bill::all();
+        //not working - use edit()
+        // //$members = Member::all();
+        // //$bill = DB::table('bills')->orderBy('created_at', 'desc')->where('member_id', $member->id)->first();
+        // $bill = Bill::all();
 
-        return view('bills.create', compact('member', 'bill'));
+        // return view('bills.create', compact('member', 'bill'));
     }
 
     /**
@@ -138,7 +140,8 @@ class BillController extends Controller
     public function edit($memberid)
     {
         $member = Member::find($memberid);
-        return view('bills.create', compact('member'));    
+        $bill = DB::table('bills')->orderBy('created_at', 'desc')->where('member_id', $member->id)->first();
+        return view('bills.create', compact('member', 'bill'));    
     }
 
     /**
