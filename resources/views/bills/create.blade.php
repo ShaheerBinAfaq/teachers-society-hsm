@@ -82,9 +82,42 @@ $(document).ready(function()
 
     //populating inputs a/c to db
     @if(count((array)$bill))
-    $("#admission_fee_amount").val({{ $bill->admission_fee_amount }});
-    $("#admission_fee_received").val({{ $bill->admission_fee_received }});
-    $("#admission_fee_balance").val({{ $bill->admission_fee_balance }});
+    $('#transfer_id').val({{ $bill->transfer_id }});
+$('#member_id').val({{ $bill->member_id }});
+$('#admission_fee_amount').val({{ $bill->admission_fee_amount }});
+$('#admission_fee_received').val({{ $bill->admission_fee_received }});
+$('#admission_fee_balance').val({{ $bill->admission_fee_balance }});
+$('#share_money_amount').val({{ $bill->share_money_amount }});
+$('#share_money_received').val({{ $bill->share_money_received }});
+$('#share_money_balance').val({{ $bill->share_money_balance }});
+$('#cost_of_land_amount').val({{ $bill->cost_of_land_amount }});
+$('#cost_of_land_received').val({{ $bill->cost_of_land_received }});
+$('#cost_of_land_balance').val({{ $bill->cost_of_land_balance }});
+$('#cost_of_corner_amount').val({{ $bill->cost_of_corner_amount }});
+$('#cost_of_corner_received').val({{ $bill->cost_of_corner_received }});
+$('#cost_of_corner_balance').val({{ $bill->cost_of_corner_balance }});
+$('#lease_documentation_amount').val({{ $bill->lease_documentation_amount }});
+$('#lease_documentation_received').val({{ $bill->lease_documentation_received }});
+$('#lease_documentation_balance').val({{ $bill->lease_documentation_balance }});
+$('#cost_of_development_amount').val({{ $bill->cost_of_development_amount }});
+$('#cost_of_development_received').val({{ $bill->cost_of_development_received }});
+$('#cost_of_development_balance').val({{ $bill->cost_of_development_balance }});
+$('#cost_of_transfer_amount').val({{ $bill->cost_of_transfer_amount }});
+$('#cost_of_transfer_received').val({{ $bill->cost_of_transfer_received }});
+$('#cost_of_transfer_balance').val({{ $bill->cost_of_transfer_balance }});
+$('#from').val({{ $bill->from }});
+$('#vide_account_no').val({{ $bill->vide_account_no }});
+$('#establishment_charges_amount').val({{ $bill->establishment_charges_amount }});
+$('#establishment_charges_received').val({{ $bill->establishment_charges_received }});
+$('#establishment_charges_balance').val({{ $bill->establishment_charges_balance }});
+$('#miscellaneous_amount').val({{ $bill->miscellaneous_amount }});
+$('#miscellaneous_received').val({{ $bill->miscellaneous_received }});
+$('#miscellaneous_balance').val({{ $bill->miscellaneous_balance }});
+$('#cost_of_forms_amount').val({{ $bill->cost_of_forms_amount }});
+$('#cost_of_forms_received').val({{ $bill->cost_of_forms_received }});
+$('#cost_of_forms_balance').val({{ $bill->cost_of_forms_balance }});
+$('#ledger_account_no').val({{ $bill->ledger_account_no }});
+
 
     @else
     @endif
