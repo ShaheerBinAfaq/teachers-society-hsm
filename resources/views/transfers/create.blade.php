@@ -35,30 +35,17 @@ text-align: center;
     <script>
       function selectMember() {
         var msid = $('#msid').val();
-        console.log('msid', msid);
         var options = $('#select_member_id option');
 
         for (let i = 1; i < options.length; i++) {
-          // console.log(options[i].attributes['msid'].nodeValue);
           var opt_msid = options[i].attributes['msid'].nodeValue;
-          console.log(opt_msid);
           if(opt_msid == msid) {
-            alert(options[i].value);
-            document.getElementById('select_member_id').value = options[i].value;
-            // $('#member_id').val(options[i].value);
+            //document.getElementById('select_member_id').value = options[i].value;
+          }
+          else {
+            options[i].style.display = "none";
           }
         }
-        // options.forEach(function(item, index) {
-        //   console.log(item);
-        // });
-        // $('#select_member_id option').each(function () {
-        //   alert(this.attributes['msid']);
-        //   if(this.attributes['msid'] == msid) {
-        //     alert(this.value);
-        //     $('#member_id').val(this.value);
-        //   }
-        // });
-        console.log(options);
       }
     </script>
 
