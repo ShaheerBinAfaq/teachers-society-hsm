@@ -32,6 +32,35 @@ text-align: center;
         }
         
     </style>
+    <script>
+      function selectMember() {
+        var msid = $('#msid').val();
+        console.log('msid', msid);
+        var options = $('#select_member_id option');
+
+        for (let i = 1; i < options.length; i++) {
+          // console.log(options[i].attributes['msid'].nodeValue);
+          var opt_msid = options[i].attributes['msid'].nodeValue;
+          console.log(opt_msid);
+          if(opt_msid == msid) {
+            alert(options[i].value);
+            document.getElementById('select_member_id').value = options[i].value;
+            // $('#member_id').val(options[i].value);
+          }
+        }
+        // options.forEach(function(item, index) {
+        //   console.log(item);
+        // });
+        // $('#select_member_id option').each(function () {
+        //   alert(this.attributes['msid']);
+        //   if(this.attributes['msid'] == msid) {
+        //     alert(this.value);
+        //     $('#member_id').val(this.value);
+        //   }
+        // });
+        console.log(options);
+      }
+    </script>
 
 <div class="row">
  <div class="col-sm-8 offset-sm-2">
@@ -57,17 +86,19 @@ text-align: center;
      
           <br>
          
-          <div class="form-group">    
-              <label for="member_id">Member:</label>
+          <div class="form-group"> 
+             <label for="msid">Membership ID:</label>
+              <input id="msid" type="number" name="msid"/>
+              <input type="button" value="Search" onclick="selectMember()">   
+              
+          <br>
+             <label for="member_id">Member:</label>
               <select name="member_id" id="select_member_id">
                 <option value=""></option>
                 @foreach($members as $member)
                 <option value="{{$member->id}}" msid="{{$member->msid}}" status="{{$member->status}}">{{$member->name}}</option>
                 @endforeach
               </select>
-          <br>
-              <label for="msid">Membership ID:</label>
-              <input id="msid" type="number" name="msid"/>
       
           <br>
               <label for="transfree_id">Transfree:</label>

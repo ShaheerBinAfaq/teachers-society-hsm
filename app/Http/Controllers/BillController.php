@@ -114,7 +114,10 @@ class BillController extends Controller
         'cost_of_forms_amount' => $request->get('cost_of_forms_amount'),
         'cost_of_forms_received' => $request->get('cost_of_forms_received'),
         'cost_of_forms_balance' => $request->get('cost_of_forms_balance'),
-        'ledger_account_no' => $request->get('ledger_account_no')
+        'ledger_account_no' => $request->get('ledger_account_no'),
+        'date' => $request->get('date'),
+        'id' => $request->get('id')
+
         ]);
         $bill->save();
         return redirect('/members')->with('success', 'Bill saved!');

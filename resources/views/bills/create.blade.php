@@ -160,9 +160,13 @@ function setDefaultBalance() {
     <div id="receiptbody">
     <center>
         <label for="member_id">Member:</label>
-            <select name="member_id" id="select_member_id">
-            <option value="{{$member->id}}" msid="{{$member->msid}}">{{$member->name}}</option>
-            </select>
+        <select name="member_id" id="select_member_id">
+        <option value="{{$member->id}}" msid="{{$member->msid}}">{{$member->name}}</option>
+        </select>
+        <br />
+        <br />
+        <label for="receipt_number">Receipt Number</label>
+        <input type="number" name="receipt_number" id="receipt_number">
     <table>
         <div>
             <thead>
@@ -277,6 +281,12 @@ function setDefaultBalance() {
                         <td>LEDGER ACCOUNT NO: <br></td>
                         <td><small>below column only refer <br> ledger a/c no</small><br>
                         <input type="number" name="ledger_account_no" id="ledger_account_no" placeholder="Enter a/c no"></td>
+                    </tr>
+                    <tr>
+                        <td>Receipt Date: <br></td>
+                        <td>
+                            <input type="date" name="date" id="date">
+                        </td>
                     </tr>
                 </div>
             </tbody>

@@ -222,7 +222,7 @@
 <div><center><h1>Billing details according to the date</h1></center>
     <center>
         @foreach($bills as $bill)
-        <h2>{{ $bill->created_at}}</h2>
+        <h2>{{ $bill->date}}</h2>
     <table>
         <div>
             <thead>

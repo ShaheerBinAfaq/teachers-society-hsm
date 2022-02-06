@@ -41,6 +41,7 @@ class Bill extends Model
         'cost_of_forms_amount',
         'cost_of_forms_received',
         'cost_of_forms_balance',
+        'date',
         'ledger_account_no'
     ];
 }
