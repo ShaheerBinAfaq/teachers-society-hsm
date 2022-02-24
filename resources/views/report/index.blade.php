@@ -99,6 +99,9 @@
     $("#phase").val('{{ $member->phase }}');
     $("#block").val('{{ $member->block }}');
 
+    $("#plot_no").val('{{ $member->plot_no }}');
+    $("#plot_category").val('{{ $member->plot_category }}');
+
 
     @else
     @endif

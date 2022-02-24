@@ -50,6 +50,18 @@
             <label for="msid">MS ID</label>
             <input type="number" name="msid" value={{ $member->msid }}>
           </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+                <input type="tel" class="form-control" name="phone" value={{ $member->phone }} />
+            </div>
+            <div class="form-group">
+            <label for="plot_no">plot_no:</label>
+                <input type="text" class="form-control" name="plot_no" value={{ $member->plot_no }} />
+            </div>
+            <div class="form-group">
+            <label for="plot_category">plot_category:</label>
+                <input type="text" class="form-control" name="plot_category" value={{ $member->plot_category }} />
+            </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

@@ -19,6 +19,8 @@ class Member extends Model
         'dei',
         'survey',
         'phase',
-        'block'    
+        'block',
+        'plot_no',
+        'plot_category'    
     ];
 }
