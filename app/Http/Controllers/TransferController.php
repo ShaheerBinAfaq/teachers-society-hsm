@@ -47,10 +47,12 @@ class TransferController extends Controller
         //     'plot_no'=>'required'
         // ]);
 
-        $member = Member::find($request->get('transfree_id'));
-        //$member = DB::table('members')->where('id', $request->get('transfree_id'))->first();
-        //$prevTransfer = Transfer::find($request->get('msid'));
-        $prevTransfer = DB::table('transfers')->orderBy('created_at', 'desc')->where('msid', $request->get('msid'))->first();
+        $member = Member::find($request->get('member_id'));
+        $tran_no = 1;
+        if (DB::table('transfers')->orderBy('created_at', 'desc')->where('msid', $request->get('msid'))->exists()) {
+            $prevTransfer = DB::table('transfers')->orderBy('created_at', 'desc')->where('msid', $request->get('msid'))->first();
+            $tran_no = $prevTransfer->tran_no + 1;
+        }
 
         $transfer = new transfer([
             'member_id' => $request->get('member_id'),
@@ -62,7 +64,7 @@ class TransferController extends Controller
             'survey' => $member->survey,
             'phase' => $member->phase,
             'block' => $member->block,
-            'tran_no' => $prevTransfer->tran_no + 1
+            'tran_no' =>  $tran_no
         ]);
         $transfer->save();
 

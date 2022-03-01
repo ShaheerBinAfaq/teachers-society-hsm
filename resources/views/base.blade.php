@@ -71,7 +71,7 @@ $(document).ready( function () {
   <div class="topnav">
   <a href="http://localhost:8000/members">Members</a>
   <a href="http://localhost:8000/transfer">Transfers</a>
-  <a href="http://localhost:8000/bill/create">Bills</a>
+  <!-- <a href="http://localhost:8000/bill/create">Bills</a> -->
   <!-- <a href="C:\Users\nm1\Downloads\report (1).html">Report</a> -->
 </div>
   <div class="container">

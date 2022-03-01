@@ -92,7 +92,7 @@
     $("#fathers_name").val('{{ $member->fathers_name }}');
     $("#occupation").val('{{ $member->occupation }}');
     $("#address").val('{{ $member->address }}');
-    $("#phone_no").val('{{ $member->phone_no }}');
+    $("#phone_no").val('{{ $member->phone }}');
 
     $("#dei").val('{{ $member->dei }}');
     $("#survey").val('{{ $member->survey }}');
@@ -154,8 +154,7 @@
             <div>
                 <br>
             <label for="">PHONE NO:</label>
-            <input type="text" name="phone no" pattern="[0-9]{4}[0-9]{7}  " id="phone_no" 
-           title="Please enter phone number with required format ex: 03001234567">
+            <input type="text" name="phone_no" id="phone_no" >
     
            
         </div>
