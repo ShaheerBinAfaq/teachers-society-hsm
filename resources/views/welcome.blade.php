@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+
+<style>
+#text {display:none;color:red}
+</style>
+
     <script>
         
 function validate()
@@ -38,6 +43,10 @@ function validate()
         alert("please enter correct username or password");
     }
 }
+function showPassword() {
+    document.getElementById("pass").type = 'text';
+}
+
     </script>
 </head>
 <body>
@@ -49,7 +58,7 @@ function validate()
                 <tr>
                 <td>username</td>
            <!-- <label for="admin">admin_username</label><br><br> -->
-           <td><input type="email" name="admin" id="admin"></td>
+           <td><input type="text" name="admin" id="admin"></td>
            </tr>
         </div>
         <div>
@@ -57,8 +66,13 @@ function validate()
             <!-- <br><label for="pass">password</label><br><br> -->
             <td>password</td>
             <td><input type="password" name="pass" id="pass"></td>
+            <td><img src="eye.png" style="width: auto;height: 22px;" onclick="showPassword();" /></td>
+
             </tr>
         <div>
+            <tr>
+            <td><p id="text">WARNING! Caps lock is ON.</p></td>
+            </tr>
             <tr>
             <td><input type="submit" value="login" onclick="validate()"></td>
             </tr>
@@ -66,6 +80,17 @@ function validate()
         </table>
         </center>
     </form>
-    
+    <script>
+        var input = document.getElementById("pass");
+var text = document.getElementById("text");
+input.addEventListener("keyup", function(event) {
+
+if (event.getModifierState("CapsLock")) {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none"
+  }
+});
+    </script>
 </body>
 </html>
