@@ -9,6 +9,135 @@
     <title>Bill</title>
     <script src="bills.js"></script>
     
+<style type="text/css">
+      <style>
+    label{
+        width: 240px;
+        display: inline-block;
+    }
+    button{
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 20px;
+    }
+    #container{
+    text-align: center;
+    }
+    select{
+        text-align: center;
+    }
+    button{
+            font-size: 25px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        #container{
+            text-align: center;
+        }
+        label{
+          color:white;
+          
+            width: 240px;
+            display: inline-block;
+        }
+        button{
+            font-size: 25px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px;
+            width: 20%;
+          
+        }
+        body{
+          background-color: grey;
+          /* background-image:url('https://cdn-icons-png.flaticon.com/512/21/21104.png'); */
+          /* background-image:url('https://ultimatemember.com/wp-content/uploads/bb-plugin/cache/verified-users-circle.png'); */
+          background-repeat: no-repeat;
+          background-size:100%
+          
+          background-attachment: fixed;
+  background-position: center;
+        }
+        div{
+text-align: center;
+        }
+        select{
+            text-align: center;
+        } */
+      
+        
+         div {
+  
+  /* background-color: red;
+  animation-name: example;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: aqua;}
+  100% {background-color: green;} */
+
+} */
+.btn {
+  
+  
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+  input[type=text], input[type=number]  , input[type=textarea], input[type=tel], input[type=date] , select [type=option] {
+    color:white;
+    
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border-color: white;
+  background: transparent;
+  border-radius: 10px;
+}
+
+  /* div{
+  background-image: url("../images/teacher.jpg");
+  background-size: cover;
+  }  */
+select{
+  color:white;
+  
+  width: 31.5%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border-color: white;
+  background: transparent; 
+  border-radius: 10px;
+}
+select option {
+    background-color: grey;
+    font-weight: bold;
+    color: white;
+}
+table{
+    
+  border: 10px solid;
+}
+thead td{
+    color:black;
+}
+td{
+    color:white;
+}
+
+
+</style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script>
@@ -167,6 +296,10 @@ function setDefaultBalance() {
         <br />
         <label for="receipt_number">Receipt Number</label>
         <input type="number" name="receipt_number" id="receipt_number">
+        <br />
+        <br />
+        <label for="">Receipt Date</label>
+        <input type="date" name="date" id="date" required>
     <table>
         <div>
             <thead>
@@ -282,12 +415,12 @@ function setDefaultBalance() {
                         <td><small>below column only refer <br> ledger a/c no</small><br>
                         <input type="number" name="ledger_account_no" id="ledger_account_no" placeholder="Enter a/c no"></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>Receipt Date: <br></td>
                         <td>
-                            <input type="date" name="date" id="date">
+                            
                         </td>
-                    </tr>
+                    </tr> -->
                 </div>
             </tbody>
         </div>

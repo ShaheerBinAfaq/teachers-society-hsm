@@ -49,7 +49,49 @@ function fnStatusFilter() {
 
 }
 </script>
+<style type="text/css">
+  body{
+    background-color:grey;
+  }
+  select{
+  color:white;
+  
+ 
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border-color: white;
+  background: transparent; 
+  border-radius: 10px;
+}
+select option {
+  
+    background-color: grey;
+    font-weight: bold;
+    color: white;
+}
+input[type=button]{
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border-color: white;
+  background: white; 
+  border-radius: 10px;
+}
+tr{
+  background-color:transparent;
+}
 
+
+  /* td{
+    color: white;
+  
+  font-weight: bold;
+            
+            text-transform: uppercase;
+            font-size:18px;
+            width: 24%;
+            display: inline-block;
+  } */
+</style>
 <div class="row">
 <div class="col-sm-12">
     <div class="col-sm-12">
