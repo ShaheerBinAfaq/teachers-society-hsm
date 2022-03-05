@@ -1,5 +1,16 @@
 @extends('base') 
 @section('main')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#dei").val('{{ $member->dei }}');
+    $("#survey").val('{{ $member->survey }}');
+    $("#phase").val('{{ $member->phase }}');
+    $("#block").val('{{ $member->block }}');
+
+    });
+</script>
+
 <div class="row">
 <img src="teacher.jfif" alt="teacher" width="1000px"  style="display: block; margin-left: auto;margin-right:auto;">
 
@@ -50,10 +61,44 @@
             <label for="msid">MS ID</label>
             <input type="number" name="msid" value={{ $member->msid }}>
           </div>
-          <div class="form-group">
-            <label for="phone">Phone:</label>
-                <input type="tel" class="form-control" name="phone" value={{ $member->phone }} />
-            </div>
+          <div>
+            <label for="dei">DEI:</label>
+            <select name="dei" id="dei">
+              <option value="SELECT DEI">SELECT DEI</option>
+              <option value="ALLAH PAI">ALLAH PAI</option>
+              <option value="SHAHI CHIB">SHAHI CHIB</option>
+              <option value="LOHAR KOLANG">LOHAR KOLANG</option>
+              
+            </select>
+          </div>
+          <br>
+          <div>
+            <label for="survey">SURVEY:</label>
+            <select name="survey" id="survey">
+                <option value="select survey">SELECT SURVEY</option>
+                <option value="15">15</option>
+                <option value="124">124</option>
+                <option value="125">125</option>
+            </select>
+        </div>
+        <br>
+        <div>
+          <label for="phase">PHASE:</label>
+          <select name="phase" id="phase">
+              <option value="select phase">SELECT PHASE</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <label for="block">BLOCK:</label>
+          <select name="block" id="block">
+              <option value="select block">SELECT BLOCK</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+          </select>
+        </div>
             <div class="form-group">
             <label for="plot_no">plot_no:</label>
                 <input type="text" class="form-control" name="plot_no" value={{ $member->plot_no }} />

@@ -44,14 +44,18 @@ function validate()
     }
 }
 function showPassword() {
-    document.getElementById("pass").type = 'text';
+    if(document.getElementById("pass").type == 'password')
+        document.getElementById("pass").type = 'text';
+    else
+        document.getElementById("pass").type = 'password';
+
 }
 
     </script>
 </head>
 <body>
     <center><h1>ADMIN</h1></center>
-    <form action="admin.html" method="get" >
+    <form action="" method="get" >
         <center>
         <table>        
             <div> 
@@ -74,7 +78,7 @@ function showPassword() {
             <td><p id="text">WARNING! Caps lock is ON.</p></td>
             </tr>
             <tr>
-            <td><input type="submit" value="login" onclick="validate()"></td>
+            <td><input type="button" value="login" onclick="validate()"></td>
             </tr>
         </div>
         </table>
