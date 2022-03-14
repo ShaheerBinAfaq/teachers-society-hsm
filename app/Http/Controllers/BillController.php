@@ -119,6 +119,15 @@ class BillController extends Controller
         'receipt_number' => $request->get('receipt_number')
 
         ]);
+        $member = Member::find($request->get('member_id'));
+        $balance = (int)$request->get('admission_fee_balance') +(int)$request->get('share_money_balance') +(int)$request->get('cost_of_land_balance') +(int)$request->get('cost_of_corner_balance') +(int)$request->get('lease_documentation_balance') +(int)$request->get('cost_of_development_balance') +(int)$request->get('cost_of_transfer_balance') +(int)$request->get('establishment_charges_balance') +(int)$request->get('miscellaneous_balance') +(int)$request->get('cost_of_forms_balance');
+        if($balance > 0) {
+            $member->status = 'Defaulter';
+        }
+        else {
+            $member->status = 'Not Defaulter';
+        }
+        $member->save();
         $bill->save();
         return redirect('/members')->with('success', 'Bill saved!');
     }
