@@ -18,7 +18,7 @@ class BillController extends Controller
     public function index()
     {
         $bills = Bill::all();
-        return view('Bills.index', compact('bills'));
+        return view('bills.index', compact('bills'));
     }
 
     /**
@@ -116,7 +116,7 @@ class BillController extends Controller
         'cost_of_forms_balance' => $request->get('cost_of_forms_balance'),
         'ledger_account_no' => $request->get('ledger_account_no'),
         'date' => $request->get('date'),
-        'id' => $request->get('id')
+        'receipt_number' => $request->get('receipt_number')
 
         ]);
         $bill->save();
