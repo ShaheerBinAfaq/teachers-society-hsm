@@ -195,8 +195,11 @@ $(document).ready(function()
 
     });
     $('#btnpdf').click(function () {
+        window.scrollTo(0, 0);
         var fileName = $('#fileName').val();
-        var worker = html2pdf().from(document.getElementById('receiptbody')).save(fileName);
+        var worker = html2pdf().set({
+            pagebreak: { after: '#vide' }
+        }).from(document.getElementById('receiptbody')).save();
     });
 
     //setting all number values to 0
@@ -286,7 +289,7 @@ function setDefaultBalance() {
 <form method="post" action="{{ route('bill.store') }}">
     @csrf
 <div><center><h1>RECEIPT</h1></center>
-    <div id="receiptbody">
+    <div id="receiptbody" style="background-color: grey;">
     <center>
         <label for="member_id">Member:</label>
         <select name="member_id" id="select_member_id">
@@ -301,14 +304,12 @@ function setDefaultBalance() {
         <label for="">Receipt Date</label>
         <input type="date" name="date" id="date" required>
     <table>
-        <div>
             <thead>
                 <td>NAME</td>
                 <td>AMOUNT</td>
                 <td>RECEIVED</td>
                 <td>BALANCE</td>
             </thead>
-        </div>
         <div>
             <tbody>
                 <div>
@@ -379,7 +380,7 @@ function setDefaultBalance() {
                     </tr>
                 </div>
                 <div>
-                    <tr>
+                    <tr id="vide">
                         <td>VIDE ACCOUNT NO:</td>
                         <td>below column only<br>refer vide a/c no <br><input type="number" name="vide_account_no" id="vide_account_no" placeholder="Enter a/c no"></td>
                     </tr>
@@ -431,7 +432,7 @@ function setDefaultBalance() {
     <br>
     <div id="container">
         <!-- <button type="print_invoice" id="btnpdf">GET INVOICE</button> -->
-        <!-- <input type="button" value="GET INVOICE" id="btnpdf" class="button"> -->
+        <input type="button" value="GET INVOICE" id="btnpdf" class="button">
         <button type="submit" class="button" >Save Bill</button>
       </div>
     </form>

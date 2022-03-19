@@ -36,15 +36,15 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>'required',
-            'cnic'=>'required',
-            'fathers_name'=>'required',
-            'address'=>'required',
-            'phone'=>'required',
-            'email'=>'required',
-            'msid'=>'required'
-        ]);
+        // $request->validate([
+        //     'name'=>'required',
+        //     'cnic'=>'required',
+        //     'fathers_name'=>'required',
+        //     'address'=>'required',
+        //     'phone'=>'required',
+        //     'email'=>'required',
+        //     'msid'=>'required'
+        // ]);
         $member = new Member([
             'name' => $request->get('name'),
             'cnic' => $request->get('cnic'),
@@ -96,13 +96,13 @@ class MembersController extends Controller
      */
     public function update(Request $request, Member $member)
     {
-        $request->validate([
-            'name'=>'required',
-            'cnic'=>'required',
-            'fathers_name'=>'required',
-            'address'=>'required',
-            'phone'=>'required|string'
-        ]);
+        // $request->validate([
+        //     'name'=>'required',
+        //     'cnic'=>'required',
+        //     'fathers_name'=>'required',
+        //     'address'=>'required',
+        //     'phone'=>'required|string'
+        // ]);
         // $contact = Contact::find($id);
         $member->name = $request->get('name');
         $member->cnic = $request->get('cnic');

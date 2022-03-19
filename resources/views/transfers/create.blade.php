@@ -148,7 +148,7 @@ select option {
               <select name="member_id" id="select_member_id">
                 <option value=""></option>
                 @foreach($members as $member)
-                <option value="{{$member->id}}" msid="{{$member->msid}}" status="{{$member->status}}">{{$member->name}}</option>
+                <option value="{{$member->id}}" msid="{{$member->msid}}" status="{{$member->status}}">{{$member->msid}} - {{$member->name}}</option>
                 @endforeach
               </select>
       

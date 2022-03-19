@@ -127,7 +127,7 @@ select option {
           <br>
           <div class="form-group">
               <label for="fathers_name">Fathers Name:</label>
-              <input type="text" class="form-control" name="fathers_name" required/><br> 
+              <input type="text" class="form-control" name="fathers_name" /><br> 
           </div>
           <br>
           <div class="form-group">
@@ -137,7 +137,7 @@ select option {
           <br>
           <div class="form-group">
               <label for="address">Address:</label>
-              <input type="text" class="form-control" name="address" required><br>
+              <input type="text" class="form-control" name="address" ><br>
           </div> 
           <br>
           <div class="form-group">
@@ -197,12 +197,12 @@ select option {
         <br>
         <div>
         <label for="plot_category">PLOT CATEGORY</label>
-        <input type="text" name="plot_category" id="plot_category" required> 
+        <input type="text" name="plot_category" id="plot_category" > 
         </div>
         <br>
         <div>
           <label for="plot_no">PLOT NO:</label>
-          <input type="number" name="plot_no" id="plot_no" required>
+          <input type="number" name="plot_no" id="plot_no" >
         </div>
           <button type="submit" >Add Member</button>
           </center>
