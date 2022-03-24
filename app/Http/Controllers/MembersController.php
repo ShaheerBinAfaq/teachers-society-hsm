@@ -58,6 +58,7 @@ class MembersController extends Controller
             'survey' => $request->get('survey'),
             'phase' => $request->get('phase'),
             'block' => $request->get('block'),
+            'allotment_no' => $request->get('allotment_no'),
             'plot_no' => $request->get('plot_no'),
             'plot_category' => $request->get('plot_category')
         ]);
@@ -112,6 +113,7 @@ class MembersController extends Controller
         $member->phone = $request->get('phone');
         $member->email = $request->get('email');
         $member->msid = $request->get('msid');
+        $member->allotment_no = $request->get('allotment_no');
         $member->plot_no = $request->get('plot_no');
         $member->plot_category = $request->get('plot_category');
 

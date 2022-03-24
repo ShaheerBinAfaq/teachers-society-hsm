@@ -202,6 +202,9 @@ select option {
             <label for="plot_category">plot_category:</label>
                 <input type="text" class="form-control" name="plot_category" value={{ $member->plot_category }} />
             </div>
+            <label for="allotment_no">allotment no:</label>
+                <input type="text" class="form-control" name="allotment_no" value={{ $member->allotment_no }} />
+            </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\transfer;
 use App\Member;
+use App\Bill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -48,6 +49,7 @@ class TransferController extends Controller
         // ]);
 
         $member = Member::find($request->get('member_id'));
+        $transfree = Member::find($request->get('transfree_id'));
         $tran_no = 1;
         if (DB::table('transfers')->orderBy('created_at', 'desc')->where('msid', $request->get('msid'))->exists()) {
             $prevTransfer = DB::table('transfers')->orderBy('created_at', 'desc')->where('msid', $request->get('msid'))->first();
@@ -57,8 +59,8 @@ class TransferController extends Controller
         $transfer = new transfer([
             'member_id' => $request->get('member_id'),
             'transfree_id' => $request->get('transfree_id'),
-            //'plot_category' => $request->get('plot_category'),
-            //'plot_no' => $request->get('plot_no'),
+            'plot_category' => $member->plot_category,
+            'plot_no' => $member->plot_no,
             'msid' => $request->get('msid'),
             'dei' => $member->dei,
             'survey' => $member->survey,
@@ -69,9 +71,17 @@ class TransferController extends Controller
         $transfer->save();
 
         // transfering msid
-        $member->msid = $request->get('msid');
-        $member->save();
+        $transfree->msid = $request->get('msid');
+        $transfree->save();
         // $message = 'transfer saved! ' + $request->get('msid');
+
+        //$prevBill = DB::table('bills')->orderBy('created_at', 'desc')->where('member_id', $request->get('member_id'))->first();
+        $prevBill = Bill::where('member_id', $request->get('member_id'))
+               ->orderBy('created_at', 'desc')
+               ->first();
+        $newBill = $prevBill->replicate();
+        $newBill->member_id = $request->get('transfree_id');
+        $newBill->save();
         return redirect('/transfer')->with('success', 'transfer saved! ');
     }
 

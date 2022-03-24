@@ -21,6 +21,7 @@ class Member extends Model
         'phase',
         'block',
         'plot_no',
-        'plot_category'    
+        'plot_category',
+        'allotment_no'    
     ];
 }
