@@ -72,6 +72,7 @@ class TransferController extends Controller
 
         // transfering msid
         $transfree->msid = $request->get('msid');
+        $transfree->status = 'Not Defaulter';
         $transfree->save();
         // $message = 'transfer saved! ' + $request->get('msid');
 
