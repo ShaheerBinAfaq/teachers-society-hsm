@@ -202,7 +202,7 @@ select option {
         <br>
         <div>
           <label for="plot_no">PLOT NO:</label>
-          <input type="number" name="plot_no" id="plot_no" >
+          <input type="text" name="plot_no" id="plot_no" >
         </div>
         <div>
 	          <label for="allotment_no">ALOTTMENT NO:</label>

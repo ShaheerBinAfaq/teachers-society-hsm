@@ -122,7 +122,7 @@ body{
         <tr>
           <td>ID</td>
           <td>Receipt Number</td>
-          <td>MSID</td>
+          <td>Member</td>
           <td>Date</td>
           <td>Actions</td>
         </tr>
@@ -132,6 +132,11 @@ body{
         <tr>
             <td>{{$bill->id}}</td>
             <td>{{$bill->receipt_number}}</td>
+            @foreach($members as $member)
+              @if($member->id == $bill->member_id)
+                <td>{{$member->name}}</td>
+              @endif
+            @endforeach
             <td>{{$bill->member_id}}</td>
             <td>{{$bill->date}}</td>
             <td>

@@ -128,8 +128,10 @@ body{
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
+          <td>SR NO</td>
           <td>MS-ID</td>
+          <td>PLOT NO</td>
+          <td>ALLOTMENT NO</td>
           <td>Name</td>
           <td>CNIC</td>
           <td>Fathers Name</td>
@@ -145,6 +147,8 @@ body{
         <tr>
             <td>{{$member->id}}</td>
             <td>{{$member->msid}}</td>
+            <td>{{$member->plot_no}}</td>
+            <td>{{$member->allotment_no}}</td>
             <td>{{$member->name}}</td>
             <td>{{$member->cnic}}</td>
             <td>{{$member->fathers_name}}</td>
