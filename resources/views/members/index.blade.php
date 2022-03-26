@@ -129,6 +129,7 @@ body{
     <thead>
         <tr>
           <td>ID</td>
+          <td>MS-ID</td>
           <td>Name</td>
           <td>CNIC</td>
           <td>Fathers Name</td>
@@ -143,6 +144,7 @@ body{
         @foreach($members as $member)
         <tr>
             <td>{{$member->id}}</td>
+            <td>{{$member->msid}}</td>
             <td>{{$member->name}}</td>
             <td>{{$member->cnic}}</td>
             <td>{{$member->fathers_name}}</td>

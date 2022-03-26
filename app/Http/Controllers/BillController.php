@@ -95,14 +95,14 @@ class BillController extends Controller
         'cost_of_corner_received' => $request->get('cost_of_corner_received'),
         'cost_of_corner_balance' => $request->get('cost_of_corner_balance'),
         'cost_of_road_facing_amount' => $request->get('cost_of_road_facing_amount'),
-'cost_of_road_facing_received' => $request->get('cost_of_road_facing_received'),
-'cost_of_road_facing_balance' => $request->get('cost_of_road_facing_balance'),
-'cost_of_west_open_amount' => $request->get('cost_of_west_open_amount'),
-'cost_of_west_open_received' => $request->get('cost_of_west_open_received'),
-'cost_of_west_open_balance' => $request->get('cost_of_west_open_balance'),
-'cost_of_park_facing_amount' => $request->get('cost_of_park_facing_amount'),
-'cost_of_park_facing_received' => $request->get('cost_of_park_facing_received'),
-'cost_of_park_facing_balance' => $request->get('cost_of_park_facing_balance'),
+        'cost_of_road_facing_received' => $request->get('cost_of_road_facing_received'),
+        'cost_of_road_facing_balance' => $request->get('cost_of_road_facing_balance'),
+        'cost_of_west_open_amount' => $request->get('cost_of_west_open_amount'),
+        'cost_of_west_open_received' => $request->get('cost_of_west_open_received'),
+        'cost_of_west_open_balance' => $request->get('cost_of_west_open_balance'),
+        'cost_of_park_facing_amount' => $request->get('cost_of_park_facing_amount'),
+        'cost_of_park_facing_received' => $request->get('cost_of_park_facing_received'),
+        'cost_of_park_facing_balance' => $request->get('cost_of_park_facing_balance'),
         'lease_documentation_amount' => $request->get('lease_documentation_amount'),
         'lease_documentation_received' => $request->get('lease_documentation_received'),
         'lease_documentation_balance' => $request->get('lease_documentation_balance'),
@@ -128,6 +128,7 @@ class BillController extends Controller
         'receipt_number' => $request->get('receipt_number')
 
         ]);
+        $bill->save();
         $member = Member::find($request->get('member_id'));
         $balance = (int)$request->get('admission_fee_balance') +(int)$request->get('share_money_balance') +(int)$request->get('cost_of_land_balance') +(int)$request->get('cost_of_corner_balance') +(int)$request->get('lease_documentation_balance') +(int)$request->get('cost_of_development_balance') +(int)$request->get('cost_of_transfer_balance') +(int)$request->get('establishment_charges_balance') +(int)$request->get('miscellaneous_balance') +(int)$request->get('cost_of_forms_balance');
         if($balance > 0) {
@@ -137,7 +138,7 @@ class BillController extends Controller
             $member->status = 'Not Defaulter';
         }
         $member->save();
-        $bill->save();
+        
         return redirect('/members')->with('success', 'Bill saved!');
     }
 

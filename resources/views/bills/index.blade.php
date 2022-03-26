@@ -122,7 +122,7 @@ body{
         <tr>
           <td>ID</td>
           <td>Receipt Number</td>
-          <td>Member Name</td>
+          <td>MSID</td>
           <td>Date</td>
           <td>Actions</td>
         </tr>

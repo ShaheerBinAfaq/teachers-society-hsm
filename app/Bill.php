@@ -42,6 +42,16 @@ class Bill extends Model
         'cost_of_forms_received',
         'cost_of_forms_balance',
         'date',
-        'ledger_account_no'
+        'ledger_account_no',
+        'cost_of_road_facing_amount',
+        'cost_of_road_facing_received',
+        'cost_of_road_facing_balance', 
+        'cost_of_west_open_amount', 
+        'cost_of_west_open_received', 
+        'cost_of_west_open_balance', 
+        'cost_of_park_facing_amount', 
+        'cost_of_park_facing_received', 
+        'cost_of_park_facing_balance', 
+        'receipt_number',
     ];
 }

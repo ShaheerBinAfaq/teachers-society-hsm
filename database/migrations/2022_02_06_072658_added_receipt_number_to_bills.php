@@ -14,7 +14,7 @@ class AddedReceiptNumberToBills extends Migration
     public function up()
     {
         Schema::table('bills', function (Blueprint $table) {
-            $table->date('receipt_number')->nullable();
+            $table->bigInteger('receipt_number')->nullable();
         });
     }
 

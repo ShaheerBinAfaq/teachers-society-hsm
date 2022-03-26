@@ -203,6 +203,7 @@ td{
 
     $("#plot_no").val('{{ $member->plot_no }}');
     $("#plot_category").val('{{ $member->plot_category }}');
+    $("#allotment_no").val('{{ $member->allotment_no }}');
 
 
     @else
@@ -323,6 +324,13 @@ td{
         <input type="number" name="plot_no" id="plot_no" required>
         
         </div>
+        <br>
+        <div>
+            
+        <label for="allotment_no">ALLOTMENT NO:</label>
+        <input type="number" name="allotment_no" id="allotment_no" required>
+        
+        </div>
 <div><center><h1>Billing details according to the date</h1></center>
     <center>
         @foreach($bills as $bill)
@@ -372,6 +380,33 @@ td{
                         <td><input type="number" name="cost_of_corner_amount" id="cost_of_corner_amount" value="{{ $bill->cost_of_corner_amount }}"></td>
                         <td><input type="number" name="cost_of_corner_received" id="cost_of_corner_received" value="{{ $bill->cost_of_corner_received }}"></td>
                         <td><input type="number" name="cost_of_corner_balance" id="cost_of_corner_balance" value="{{ $bill->cost_of_corner_balance }}"></td>
+
+                    </tr>
+                </div>
+                <div>
+                    <tr>
+                        <td>COST OF ROAD FACING</td>
+                        <td><input type="number" name="cost_of_road_facing_amount" id="cost_of_road_facing_amount" value="{{ $bill->cost_of_road_facing_amount }}"></td>
+                        <td><input type="number" name="cost_of_road_facing_received" id="cost_of_road_facing_received" value="{{ $bill->cost_of_road_facing_received }}"></td>
+                        <td><input type="number" name="cost_of_road_facing_balance" id="cost_of_road_facing_balance" value="{{ $bill->cost_of_road_facing_balance }}"></td>
+
+                    </tr>
+                </div>
+                <div>
+                    <tr>
+                        <td>COST OF WEST OPEN</td>
+                        <td><input type="number" name="cost_of_west_open_amount" id="cost_of_west_open_amount" value="{{ $bill->cost_of_west_open_amount }}"></td>
+                        <td><input type="number" name="cost_of_west_open_received" id="cost_of_west_open_received" value="{{ $bill->cost_of_west_open_received }}"></td>
+                        <td><input type="number" name="cost_of_west_open_balance" id="cost_of_west_open_balance" value="{{ $bill->cost_of_west_open_balance }}"></td>
+
+                    </tr>
+                </div>
+                <div>
+                    <tr>
+                        <td>COST OF PARK FACING</td>
+                        <td><input type="number" name="cost_of_park_facing_amount" id="cost_of_park_facing_amount" value="{{ $bill->cost_of_park_facing_amount }}"></td>
+                        <td><input type="number" name="cost_of_park_facing_received" id="cost_of_park_facing_received" value="{{ $bill->cost_of_park_facing_received }}"></td>
+                        <td><input type="number" name="cost_of_park_facing_balance" id="cost_of_park_facing_balance" value="{{ $bill->cost_of_park_facing_balance }}"></td>
 
                     </tr>
                 </div>

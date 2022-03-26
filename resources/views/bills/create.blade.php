@@ -372,19 +372,19 @@ function setDefaultBalance() {
                         <td>COST OF ROAD FACING</td>
                         <td><input type="number" name="cost_of_road_facing_amount" id="cost_of_road_facing_amount"></td>
                         <td><input type="number" name="cost_of_road_facing_received" id="cost_of_road_facing_received"></td>
-                        <td><input type="number" name="cost_of_road_facing_balance" id="cost_of_road_facing_balance"></td>
+                        <td><input type="text" name="cost_of_road_facing_balance" id="cost_of_road_facing_balance"readonly></td>
                 </tr>
                 <tr>
                         <td>COST OF WEST OPEN</td>
                         <td><input type="number" name="cost_of_west_open_amount" id="cost_of_west_open_amount"></td>
                         <td><input type="number" name="cost_of_west_open_received" id="cost_of_west_open_received"></td>
-                        <td><input type="number" name="cost_of_west_open_balance" id="cost_of_west_open_balance"></td>
+                        <td><input type="text" name="cost_of_west_open_balance" id="cost_of_west_open_balance"readonly></td>
                 </tr>
                 <tr>
                         <td>COST OF PARK FACING</td>
                         <td><input type="number" name="cost_of_park_facing_amount" id="cost_of_park_facing_amount"></td>
                         <td><input type="number" name="cost_of_park_facing_received" id="cost_of_park_facing_received"></td>
-                        <td><input type="number" name="cost_of_park_facing_balance" id="cost_of_park_facing_balance"></td>
+                        <td><input type="text" name="cost_of_park_facing_balance" id="cost_of_park_facing_balance"readonly></td>
 
                     </tr>   
                 <div>

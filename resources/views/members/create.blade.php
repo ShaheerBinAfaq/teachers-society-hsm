@@ -205,7 +205,7 @@ select option {
           <input type="number" name="plot_no" id="plot_no" >
         </div>
         <div>
-	          <label for="allotment_no">PLOT NO:</label>
+	          <label for="allotment_no">ALOTTMENT NO:</label>
 	          <input type="number" name="allotment_no" id="allotment_no" >
         </div>
           <button type="submit" >Add Member</button>

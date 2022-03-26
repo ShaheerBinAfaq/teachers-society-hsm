@@ -22,6 +22,6 @@ class Member extends Model
         'block',
         'plot_no',
         'plot_category',
-        'allotment_no'    
+        'allotment_no',    
     ];
 }
