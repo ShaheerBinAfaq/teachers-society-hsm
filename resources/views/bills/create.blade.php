@@ -163,7 +163,18 @@ $(document).ready(function()
         $("#cost_of_corner_balance").val($("#cost_of_corner_amount").val() - $("#cost_of_corner_received").val());
 
     });
-    
+    $("#cost_of_road_facing_received").blur(function()
+    {
+        $("#cost_of_road_facing_balance").val($("#cost_of_road_facing_amount").val() - $("#cost_of_road_facing_received").val());
+    });
+$("#cost_of_west_open_received").blur(function()
+    {
+        $("#cost_of_west_open_balance").val($("#cost_of_west_open_amount").val() - $("#cost_of_west_open_received").val());
+    });
+$("#cost_of_park_facing_received").blur(function()
+    {
+        $("#cost_of_park_facing_balance").val($("#cost_of_park_facing_amount").val() - $("#cost_of_park_facing_received").val());
+    });
     $("#lease_documentation_received").blur(function()
     {
         $("#lease_documentation_balance").val($("#lease_documentation_amount").val() - $("#lease_documentation_received").val());
@@ -228,6 +239,15 @@ $('#cost_of_land_balance').val({{ $bill->cost_of_land_balance }});
 $('#cost_of_corner_amount').val({{ $bill->cost_of_corner_amount }});
 $('#cost_of_corner_received').val({{ $bill->cost_of_corner_received }});
 $('#cost_of_corner_balance').val({{ $bill->cost_of_corner_balance }});
+$('#cost_of_road_facing_amount').val({{ $bill->cost_of_road_facing_amount }});
+$('#cost_of_road_facing_received').val({{ $bill->cost_of_road_facing_received }});
+$('#cost_of_road_facing_balance').val({{ $bill->cost_of_road_facing_balance }});
+$('#cost_of_west_open_amount').val({{ $bill->cost_of_west_open_amount }});
+$('#cost_of_west_open_received').val({{ $bill->cost_of_west_open_received }});
+$('#cost_of_west_open_balance').val({{ $bill->cost_of_west_open_balance }});
+$('#cost_of_park_facing_amount').val({{ $bill->cost_of_park_facing_amount }});
+$('#cost_of_park_facing_received').val({{ $bill->cost_of_park_facing_received }});
+$('#cost_of_park_facing_balance').val({{ $bill->cost_of_park_facing_balance }});
 $('#lease_documentation_amount').val({{ $bill->lease_documentation_amount }});
 $('#lease_documentation_received').val({{ $bill->lease_documentation_received }});
 $('#lease_documentation_balance').val({{ $bill->lease_documentation_balance }});
@@ -261,6 +281,9 @@ function setDefaultBalance() {
     $("#share_money_balance").val($("#share_money_amount").val() - $("#share_money_received").val());
     $("#cost_of_land_balance").val($("#cost_of_land_amount").val() - $("#cost_of_land_received").val());
     $("#cost_of_corner_balance").val($("#cost_of_corner_amount").val() - $("#cost_of_corner_received").val());
+    $("#cost_of_road_facing_balance").val($("#cost_of_road_facing_amount").val() - $("#cost_of_road_facing_received").val()); 
+    $("#cost_of_west_open_balance").val($("#cost_of_west_open_amount").val() - $("#cost_of_west_open_received").val());
+    $("#cost_of_park_facing_balance").val($("#cost_of_park_facing_amount").val() - $("#cost_of_park_facing_received").val());
     $("#lease_documentation_balance").val($("#lease_documentation_amount").val() - $("#lease_documentation_received").val());
     $("#cost_of_development_balance").val($("#cost_of_development_amount").val() - $("#cost_of_development_received").val());
     $("#cost_of_transfer_balance").val($("#cost_of_transfer_amount").val() - $("#cost_of_transfer_received").val());
