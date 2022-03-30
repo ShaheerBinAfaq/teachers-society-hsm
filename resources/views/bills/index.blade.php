@@ -124,6 +124,7 @@ body{
           <td>Receipt Number</td>
           <td>Member</td>
           <td>Date</td>
+          <td>Total Received</td>
           <td>Actions</td>
         </tr>
     </thead>
@@ -137,8 +138,9 @@ body{
                 <td>{{$member->name}}</td>
               @endif
             @endforeach
-            <td>{{$bill->member_id}}</td>
+            <!-- <td>{{$bill->member_id}}</td> -->
             <td>{{$bill->date}}</td>
+            <td>{{$bill->admission_fee_received + $bill->share_money_received + $bill->cost_of_land_received + $bill->cost_of_corner_received + $bill->lease_documentation_received + $bill->cost_of_development_received + $bill->cost_of_transfer_received + $bill->establishment_charges_received + $bill->miscellaneous_received + $bill->cost_of_forms_received + $bill->cost_of_road_facing_received + $bill->cost_of_west_open_received + $bill->cost_of_park_facing_received}}</td>
             <td>
                 <form action="{{ route('bill.destroy', $bill)}}" method="post">
                   @csrf

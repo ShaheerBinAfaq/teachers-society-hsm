@@ -10,7 +10,7 @@ function fnStatusFilter() {
   tr = table.getElementsByTagName("tr");
   if(filter != "SHOW ALL") {
     for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[7];
+      td = tr[i].getElementsByTagName("td")[10];
       if (td) {
         txtValue = td.textContent || td.innerText;
         if (txtValue.toUpperCase()==filter) {

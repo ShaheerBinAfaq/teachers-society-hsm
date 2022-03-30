@@ -121,12 +121,12 @@ select option {
           <br>
           <div class="form-group">
               <label for="cnic">CNIC</label>
-              <input type="text" class="form-control" name="cnic" required pattern="[0-9]{13}" title="Please enter the cnic no in the required format ex:4210165405091"/><br>
+              <input type="text" class="form-control" name="cnic" required pattern="[0-9]{20}" title="Please enter the cnic no in the required format ex:4210165405091"/><br>
           </div>
         
           <br>
           <div class="form-group">
-              <label for="fathers_name">Fathers Name:</label>
+              <label for="fathers_name">S/o D/o W/o:</label>
               <input type="text" class="form-control" name="fathers_name" /><br> 
           </div>
           <br>

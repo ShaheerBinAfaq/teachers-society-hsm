@@ -72,6 +72,12 @@ class TransferController extends Controller
 
         // transfering msid
         $transfree->msid = $request->get('msid');
+        $transfree->plot_category = $member->plot_category;
+        $transfree->plot_no = $member->plot_no;
+        $transfree->dei = $member->dei;
+        $transfree->survey = $member->survey;
+        $transfree->phase = $member->phase;
+        $transfree->block = $member->block;
         $transfree->status = 'Not Defaulter';
         $transfree->save();
         // $message = 'transfer saved! ' + $request->get('msid');

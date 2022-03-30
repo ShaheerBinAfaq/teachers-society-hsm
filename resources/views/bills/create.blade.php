@@ -429,7 +429,7 @@ function setDefaultBalance() {
                 </div>
                 <div>
                     <tr>
-                        <td>ESTABLISHMENT CHARGES</td>
+                        <td>ESTABLISHMENT CHARGES / OFFICE EMPLOYEE /<br /> OFFICE MAINTENANCE CHARGES</td>
                         <td><input type="number" name="establishment_charges_amount" id="establishment_charges_amount"></td>
                         <td><input type="number" name="establishment_charges_received" id="establishment_charges_received"></td>
                         <td><input type="text" name="establishment_charges_balance" id="establishment_charges_balance"readonly></td>

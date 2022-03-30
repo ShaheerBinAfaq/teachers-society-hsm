@@ -133,7 +133,7 @@ select option {
                 <input type="text" class="form-control" name="cnic" value={{ $member->cnic }} />
             </div>
             <div class="form-group">
-            <label for="fathers_name">Fathers Name:</label>
+            <label for="fathers_name">S/o D/o W/o:</label>
                 <input type="text" class="form-control" name="fathers_name" value="{{ $member->fathers_name }}" />
             </div>
             <div class="form-group">

@@ -238,7 +238,7 @@ td{
             </div>
             <div>
                 <br>
-            <label for="">FATHERS NAME</label>
+            <label for="">S/o D/o W/o</label>
             <input type="text" placeholder="yours father name" name="fathers_name" id="fathers_name">
             <br>
             </div>    
@@ -335,6 +335,7 @@ td{
     <center>
         @foreach($bills as $bill)
         <h2>{{ $bill->date}}</h2>
+        <h2>Receipt #: {{ $bill->receipt_number}}</h2>
     <table>
         <div>
             <thead>
@@ -455,7 +456,7 @@ td{
                 </div>
                 <div>
                     <tr>
-                        <td>ESTABLISHMENT CHARGES</td>
+                        <td>ESTABLISHMENT CHARGES / OFFICE EMPLOYEE /<br /> OFFICE MAINTENANCE CHARGES</td>
                         <td><input type="number" name="establishment_charges_amount" id="establishment_charges_amount" value="{{ $bill->establishment_charges_amount }}"></td>
                         <td><input type="number" name="establishment_charges_received" id="establishment_charges_received" value="{{ $bill->establishment_charges_received }}"></td>
                         <td><input type="number" name="establishment_charges_balance" id="establishment_charges_balance" value="{{ $bill->establishment_charges_balance }}"></td>
