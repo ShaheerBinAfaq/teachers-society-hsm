@@ -10,7 +10,7 @@ function fnStatusFilter() {
   tr = table.getElementsByTagName("tr");
   if(filter != "SHOW ALL") {
     for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[10];
+      td = tr[i].getElementsByTagName("td")[9];
       if (td) {
         txtValue = td.textContent || td.innerText;
         if (txtValue.toUpperCase()==filter) {
@@ -128,7 +128,7 @@ body{
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>SR NO</td>
+          <!-- <td>SR NO</td> -->
           <td>MS-ID</td>
           <td>PLOT NO</td>
           <td>ALLOTMENT NO</td>
@@ -139,13 +139,14 @@ body{
           <td>Address</td>
           <td>Phone</td>
           <td>Status</td>
+          <td>Total Balance</td>
           <td>Actions</td>
         </tr>
     </thead>
     <tbody id="myTable">
         @foreach($members as $member)
         <tr>
-            <td>{{$member->id}}</td>
+            <!-- <td>{{$member->id}}</td> -->
             <td>{{$member->msid}}</td>
             <td>{{$member->plot_no}}</td>
             <td>{{$member->allotment_no}}</td>
@@ -156,6 +157,7 @@ body{
             <td>{{$member->address}}</td>
             <td>{{$member->phone}}</td>
             <td>{{$member->status}}</td>
+            <td>{{$member->total_balance}}</td>
             <td>
                 <a href="{{ route('members.edit',$member)}}" class="btn btn-primary">Edit</a>
                 <a href="{{ route('due.edit',$member->id)}}" class="btn btn-primary">Report</a>

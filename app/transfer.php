@@ -16,6 +16,8 @@ class transfer extends Model
         'survey',
         'phase',
         'block' ,
-        'tran_no' 
+        'tran_no',
+        'date',  
+
     ];
 }

@@ -53,5 +53,6 @@ class Bill extends Model
         'cost_of_park_facing_received', 
         'cost_of_park_facing_balance', 
         'receipt_number',
+        'penalty'
     ];
 }

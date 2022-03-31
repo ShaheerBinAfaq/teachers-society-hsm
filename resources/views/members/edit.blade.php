@@ -205,6 +205,15 @@ select option {
             <label for="allotment_no">allotment no:</label>
                 <input type="text" class="form-control" name="allotment_no" value={{ $member->allotment_no }} />
             </div>
+            <div>
+              <label for="">Membership Date</label>
+              <input type="date" name="date" id="date" value={{ $member->date }}>
+            </div>
+            <div>
+                <label for="">Allotment Date</label>
+                <input type="date" name="allotment_date" id="allotment_date" value={{ $member->allotment_date }}>
+            </div>
+
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

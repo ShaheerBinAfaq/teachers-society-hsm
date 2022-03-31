@@ -126,12 +126,14 @@ class BillController extends Controller
         'cost_of_forms_balance' => $request->get('cost_of_forms_balance'),
         'ledger_account_no' => $request->get('ledger_account_no'),
         'date' => $request->get('date'),
-        'receipt_number' => $request->get('receipt_number')
+        'receipt_number' => $request->get('receipt_number'),
+        'penalty' => $request->get('penalty'),
 
         ]);
         $bill->save();
         $member = Member::find($request->get('member_id'));
         $balance = (int)$request->get('admission_fee_balance') +(int)$request->get('share_money_balance') +(int)$request->get('cost_of_land_balance') +(int)$request->get('cost_of_corner_balance') +(int)$request->get('lease_documentation_balance') +(int)$request->get('cost_of_development_balance') +(int)$request->get('cost_of_transfer_balance') +(int)$request->get('establishment_charges_balance') +(int)$request->get('miscellaneous_balance') +(int)$request->get('cost_of_forms_balance');
+        $member->total_balance = $balance;
         if($balance > 0) {
             $member->status = 'Defaulter';
         }

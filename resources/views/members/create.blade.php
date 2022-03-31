@@ -121,7 +121,7 @@ select option {
           <br>
           <div class="form-group">
               <label for="cnic">CNIC</label>
-              <input type="text" class="form-control" name="cnic" required pattern="[0-9]{20}" title="Please enter the cnic no in the required format ex:4210165405091"/><br>
+              <input type="text" class="form-control" name="cnic" required pattern="[0-9]{13-20}" title="Please enter the cnic no in the required format ex:4210165405091"/><br>
           </div>
         
           <br>
@@ -208,6 +208,15 @@ select option {
 	          <label for="allotment_no">ALOTTMENT NO:</label>
 	          <input type="number" name="allotment_no" id="allotment_no" >
         </div>
+        <div>
+	          <label for="">Membership Date</label>
+            <input type="date" name="date" id="date">
+        </div>
+        <div>
+	          <label for="">Allotment Date</label>
+            <input type="date" name="allotment_date" id="allotment_date">
+        </div>
+
           <button type="submit" >Add Member</button>
           </center>
       </form>

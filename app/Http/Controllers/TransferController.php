@@ -62,6 +62,7 @@ class TransferController extends Controller
             'plot_category' => $member->plot_category,
             'plot_no' => $member->plot_no,
             'msid' => $request->get('msid'),
+            'date' => $request->get('date'),
             'dei' => $member->dei,
             'survey' => $member->survey,
             'phase' => $member->phase,

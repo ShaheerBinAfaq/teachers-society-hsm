@@ -489,6 +489,12 @@ td{
                         <input type="number" name="ledger_account_no" id="ledger_account_no" value="{{ $bill->ledger_account_no }}"></td>
 
                     </tr>
+                    <tr>
+                        <td>PENALTY(IF ANY): <br></td>
+                        <td>
+                        <input type="number" name="penalty" id="penalty"  value="{{ $bill->penalty }}"></td>
+
+                    </tr>
                 </div>
             
             </tbody>

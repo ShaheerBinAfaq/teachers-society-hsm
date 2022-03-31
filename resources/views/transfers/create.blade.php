@@ -160,6 +160,8 @@ select option {
                 @endforeach
               </select>
           <br>
+          <label for="">Transfer Date</label>
+          <input type="date" name="date" id="date">
               <!-- <label for="dei">DEI:</label>
         <select name="dei" id="dei">
             <option value="SELECT DEI">SELECT DEI</option>
