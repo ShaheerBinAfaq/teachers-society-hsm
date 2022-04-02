@@ -112,6 +112,18 @@ select option {
           }
         }
       }
+      function fnreturn() {
+        document.getElementById('dvstatus').style.display = '';
+      }
+      function fnstatus(value) {
+        if(value == "Returned") {
+          document.getElementById('dvreturn_amount').style.display = '';
+        }
+        else if(value == "Balanced") {
+          document.getElementById('dvreturn_amount').style.display = '';
+          document.getElementById('dvreturn_to').style.display = '';
+        }
+      }
     </script>
 
 <div class="row">
@@ -162,6 +174,24 @@ select option {
           <br>
           <label for="">Transfer Date</label>
           <input type="date" name="date" id="date">
+          <br>
+          <div id="dvstatus" style="display: none;">
+            <label for="">Status</label>
+            <select name="status" id="status" onchange="fnstatus(this.value)">
+              <option value="Transferred">Transferred</option>
+              <option value="Returned">Returned</option>
+              <option value="Balanced">Balanced</option>
+            </select>
+          </div>
+          <div id="dvreturn_to" style="display: none;">
+            <label for="">Payment Transferred To</label>
+            <input type="text" name="return_to" id="return_to">
+          </div>
+          <div id="dvreturn_amount" style="display: none;">
+            <label for="">Payment Transferred Amount</label>
+            <input type="text" name="return_amount" id="return_amount">
+          </div>
+
               <!-- <label for="dei">DEI:</label>
         <select name="dei" id="dei">
             <option value="SELECT DEI">SELECT DEI</option>
@@ -220,6 +250,7 @@ select option {
         
           </div> -->
           
+          <input type="button" class="btn btn-primary-outline" onclick="fnreturn()" value="Return" />
           <button type="submit" class="btn btn-primary-outline">Add Transfer</button>
       </form>
       

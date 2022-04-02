@@ -173,6 +173,7 @@ tr{
           <td>plot_category</td>
           <td>plot_no</td>
           <td>Transfer no</td>
+          <td>Status</td>
         </tr>
     </thead>
     <tbody id="myTable">
@@ -205,6 +206,7 @@ tr{
             <td>{{$transfer->plot_category}}</td>
             <td>{{$transfer->plot_no}}</td>
             <td>{{$transfer->tran_no}}</td>
+            <td title="Payment Transferred To:{{$transfer->return_to}}&#10;Transferred Amount:{{$transfer->return_amount}}">{{$transfer->status}}</td>
 
         </tr>
         @endforeach

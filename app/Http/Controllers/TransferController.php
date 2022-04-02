@@ -67,7 +67,11 @@ class TransferController extends Controller
             'survey' => $member->survey,
             'phase' => $member->phase,
             'block' => $member->block,
-            'tran_no' =>  $tran_no
+            'tran_no' =>  $tran_no,
+            'status' => $request->get('status'),
+            'return_to' => $request->get('return_to'),
+            'return_amount' => $request->get('return_amount'),
+
         ]);
         $transfer->save();
 
