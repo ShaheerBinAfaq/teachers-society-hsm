@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Member;
+use Excel;
+use App\Exports\MemberBillExport;
 use Illuminate\Http\Request;
 
 class MembersController extends Controller
@@ -60,7 +62,9 @@ class MembersController extends Controller
             'block' => $request->get('block'),
             'allotment_no' => $request->get('allotment_no'),
             'plot_no' => $request->get('plot_no'),
-            'plot_category' => $request->get('plot_category')
+            'plot_category' => $request->get('plot_category'),
+            'date' => $request->get('date'),
+            'allotment_date' => $request->get('allotment_date')
         ]);
         $member->save();
         return redirect('/members')->with('success', 'Member saved!');
@@ -116,6 +120,8 @@ class MembersController extends Controller
         $member->allotment_no = $request->get('allotment_no');
         $member->plot_no = $request->get('plot_no');
         $member->plot_category = $request->get('plot_category');
+        $member->date = $request->get('date');
+        $member->allotment_date = $request->get('allotment_date');
 
         $member->save();
         return redirect('/members')->with('success', 'Member updated!');
@@ -131,5 +137,9 @@ class MembersController extends Controller
     {
         $member->delete();
         return redirect('/members')->with('success', 'Member deleted!');
+    }
+    public function export() 
+    {
+        return Excel::download(new MemberBillExport, 'users.xlsx');
     }
 }

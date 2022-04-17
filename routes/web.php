@@ -28,3 +28,4 @@ Route::resource('bill', 'BillController');
 Route::resource('due', 'DueController');
 // Route::view('/report', 'report.index');
 //Route::view('/transfer', 'bills/transfer');
+Route::get('export', 'MembersController@export')->name('export');

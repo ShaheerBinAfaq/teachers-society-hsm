@@ -83,7 +83,12 @@ class TransferController extends Controller
         $transfree->survey = $member->survey;
         $transfree->phase = $member->phase;
         $transfree->block = $member->block;
-        $transfree->status = 'Not Defaulter';
+        if(is_null($member->allotment_no)) {
+            $transfree->status = 'Not Defaulter';
+        }
+        else {
+            $transfree->status = 'Alottee';
+        }
         $transfree->save();
         // $message = 'transfer saved! ' + $request->get('msid');
 
@@ -93,6 +98,7 @@ class TransferController extends Controller
                ->first();
         $newBill = $prevBill->replicate();
         $newBill->member_id = $request->get('transfree_id');
+        $newBill->receipt_number = $request->get('receipt_number');
         $newBill->save();
         return redirect('/transfer')->with('success', 'transfer saved! ');
     }

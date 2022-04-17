@@ -165,7 +165,6 @@ tr{
           <td>MSID</td>
           <td>member</td>
           <td>transfree</td>          
-          <!-- <td>Actions</td> -->
           <td>dei</td>
           <td>survey</td>
           <td>phase</td>
@@ -174,6 +173,7 @@ tr{
           <td>plot_no</td>
           <td>Transfer no</td>
           <td>Status</td>
+          <td>Actions</td>
         </tr>
     </thead>
     <tbody id="myTable">
@@ -190,15 +190,7 @@ tr{
                 <td>{{($member->name)}}</td>
               @endif
             @endforeach
-            <!-- <td>
-                <a href="{{ route('transfer.edit',$transfer)}}" class="btn btn-primary">Edit</a>
-            
-                <form action="{{ route('transfer.destroy', $transfer)}}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
-                </form>
-            </td> -->
+
             <td>{{$transfer->dei}}</td>
             <td>{{$transfer->survey}}</td>
             <td>{{$transfer->phase}}</td>
@@ -207,7 +199,15 @@ tr{
             <td>{{$transfer->plot_no}}</td>
             <td>{{$transfer->tran_no}}</td>
             <td title="Payment Transferred To:{{$transfer->return_to}}&#10;Transferred Amount:{{$transfer->return_amount}}">{{$transfer->status}}</td>
-
+            <td>
+                <!-- <a href="{{ route('transfer.edit',$transfer)}}" class="btn btn-primary">Edit</a> -->
+            
+                <form action="{{ route('transfer.destroy', $transfer)}}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </tbody>

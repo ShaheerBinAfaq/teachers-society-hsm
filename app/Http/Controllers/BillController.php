@@ -128,17 +128,22 @@ class BillController extends Controller
         'date' => $request->get('date'),
         'receipt_number' => $request->get('receipt_number'),
         'penalty' => $request->get('penalty'),
-
+        'adjust_amount' => $request->get('adjust_amount')
         ]);
         $bill->save();
         $member = Member::find($request->get('member_id'));
-        $balance = (int)$request->get('admission_fee_balance') +(int)$request->get('share_money_balance') +(int)$request->get('cost_of_land_balance') +(int)$request->get('cost_of_corner_balance') +(int)$request->get('lease_documentation_balance') +(int)$request->get('cost_of_development_balance') +(int)$request->get('cost_of_transfer_balance') +(int)$request->get('establishment_charges_balance') +(int)$request->get('miscellaneous_balance') +(int)$request->get('cost_of_forms_balance');
+        $balance = (int)$request->get('penalty')-(int)$request->get('adjust_amount') +(int)$request->get('admission_fee_balance') +(int)$request->get('share_money_balance') +(int)$request->get('cost_of_land_balance') +(int)$request->get('cost_of_corner_balance') +(int)$request->get('lease_documentation_balance') +(int)$request->get('cost_of_development_balance') +(int)$request->get('cost_of_transfer_balance') +(int)$request->get('establishment_charges_balance') +(int)$request->get('miscellaneous_balance') +(int)$request->get('cost_of_forms_balance');
         $member->total_balance = $balance;
         if($balance > 0) {
             $member->status = 'Defaulter';
         }
         else {
-            $member->status = 'Not Defaulter';
+            if(is_null($member->allotment_no)) {
+                $member->status = 'Not Defaulter';
+            }
+            else {
+                $member->status = 'Alottee';
+            }
         }
         $member->save();
         

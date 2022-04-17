@@ -18,6 +18,9 @@ class transfer extends Model
         'block' ,
         'tran_no',
         'date',  
+        'status',  
+        'return_to',  
+        'return_amount',  
 
     ];
 }

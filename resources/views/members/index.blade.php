@@ -118,6 +118,7 @@ body{
     <div>
     <a style="margin: 19px;" href="{{ route('members.create')}}" class="btn btn-primary">New Member</a>
     </div>
+    <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
     <div>
       <select id="statusFilter" onchange="fnStatusFilter()">
         <option value="Show all">Show all</option>

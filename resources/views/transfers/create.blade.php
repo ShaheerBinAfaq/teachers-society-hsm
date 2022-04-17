@@ -175,6 +175,9 @@ select option {
           <label for="">Transfer Date</label>
           <input type="date" name="date" id="date">
           <br>
+          <label for="">Receipt Number</label>
+          <input type="number" name="receipt_number" id="receipt_number">
+          <br>
           <div id="dvstatus" style="display: none;">
             <label for="">Status</label>
             <select name="status" id="status" onchange="fnstatus(this.value)">

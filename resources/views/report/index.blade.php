@@ -450,8 +450,14 @@ td{
                 </div>
                 <div>
                     <tr>
-                        <td>VIDE ACCOUNT NO:</td>
-                        <td>below column only<br>refer vide a/c no <br><input type="number" name="vide_account_no" id="vide_account_no" value="{{ $bill->vide_account_no }}"></td>
+                        <td>ADJUSTED FROM:</td>
+                        <td><input type="number" name="vide_account_no" id="vide_account_no" value="{{ $bill->vide_account_no }}"></td>
+                    </tr>
+                </div>
+                <div>
+                    <tr>
+                        <<td>ADJUSTED AMOUNT:</td>
+                        <td><input type="number" name="adjust_amount" id="adjust_amount" value="{{ $bill->adjust_amount }}></td>
                     </tr>
                 </div>
                 <div>
