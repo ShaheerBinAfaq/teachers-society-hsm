@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Bill;
 use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
@@ -27,4 +28,8 @@ class Member extends Model
         'allotment_date',  
         'total_balance',  
     ];
+    public function bills()
+    {
+        return $this->hasMany(Bill::class, 'member_id', 'id');
+    }
 }
