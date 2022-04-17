@@ -118,12 +118,13 @@ body{
     <div>
     <a style="margin: 19px;" href="{{ route('members.create')}}" class="btn btn-primary">New Member</a>
     </div>
-    <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+    <!-- <a href="{{ route('export') }}">Export Member Data</a> -->
     <div>
       <select id="statusFilter" onchange="fnStatusFilter()">
         <option value="Show all">Show all</option>
         <option value="Defaulter">Defaulter</option>
         <option value="Not Defaulter">Not Defaulter</option>
+        <option value="Alottee">Alottee</option>
       </select>
     </div>
   <table class="table table-striped">

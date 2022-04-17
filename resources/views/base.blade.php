@@ -59,7 +59,7 @@ textarea {
 <script>
 $(document).ready( function () {
     var table = $('.table').DataTable({
-      paging: true,
+      paging: false,
       searching: true,
       ordering: true
     });
