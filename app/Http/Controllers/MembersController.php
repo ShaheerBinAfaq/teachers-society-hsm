@@ -140,6 +140,6 @@ class MembersController extends Controller
     }
     public function export() 
     {
-        return Excel::download(new MemberBillExport, 'users.xlsx');
+        return Excel::download(new MemberBillExport, 'members.xlsx');
     }
 }

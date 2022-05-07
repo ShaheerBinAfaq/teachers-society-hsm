@@ -57,10 +57,9 @@ textarea {
  
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
 <script>
-  let table;
 $(document).ready( function () {
-    table = $('.table').DataTable({
-      paging: true,
+    var table = $('.table').DataTable({
+      paging: false,
       searching: true,
       ordering: true
     });
