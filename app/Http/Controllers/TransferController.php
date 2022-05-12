@@ -83,12 +83,17 @@ class TransferController extends Controller
         $transfree->survey = $member->survey;
         $transfree->phase = $member->phase;
         $transfree->block = $member->block;
+        //setting member status of return
+        if($request->get('status') != 'Transferred') {
+            $member->status = $request->get('status');
+        }
         if(is_null($member->allotment_no)) {
             $transfree->status = 'Not Defaulter';
         }
         else {
             $transfree->status = 'Alottee';
         }
+        $member->save();
         $transfree->save();
         // $message = 'transfer saved! ' + $request->get('msid');
 
