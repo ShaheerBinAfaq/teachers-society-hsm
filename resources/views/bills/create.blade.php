@@ -303,6 +303,15 @@ function setDefaultBalance() {
     $("#miscellaneous_balance").val($("#miscellaneous_amount").val() - $("#miscellaneous_received").val());
     $("#cost_of_forms_balance").val($("#cost_of_forms_amount").val() - $("#cost_of_forms_received").val());
 }
+
+function fnPayMethod(val){
+    if(val != 'Cash') {
+        document.getElementById('dvbank').style.display = '';
+        if(val == 'Cheque') {
+        document.getElementById('dvcheck').style.display = '';
+    }
+    }
+}
     </script> 
    
     <style type="text/css">
@@ -338,6 +347,30 @@ function setDefaultBalance() {
         <br />
         <label for="">Receipt Date</label>
         <input type="date" name="date" id="date" required>
+        <br />
+        <label for="">Payment Method</label>
+        <select name="payment_method" id="payment_method" onchange="fnPayMethod(this.value)">
+            <option value="Cash">Cash</option>
+            <option value="Cheque">Cheque</option>
+            <option value="Pay Order">Pay Order</option>
+        </select>
+        <br />
+        <div id="dvbank" style="display: none; ">
+            <label for="">Bank</label>
+            <input type="text" name="bank_name" id="bank_name" >
+        </div>
+        <br />
+        <div id="dvcheck" style="display: none; ">
+            <label for="">Cheque Number</label>
+            <input type="text" name="check_number" id="check_number" >
+            <br />
+            <label for="">Cheque Date</label>
+            <input type="date" name="check_date" id="check_date" >
+        </div>
+        <br />
+        <label for="">Others</label>
+        <input type="text" name="others" id="others" >
+        
     <table>
             <thead>
                 <td>NAME</td>

@@ -125,6 +125,7 @@ body{
         <option value="Defaulter">Defaulter</option>
         <option value="Not Defaulter">Not Defaulter</option>
         <option value="Alottee">Alottee</option>
+        <option value="Returned">Returned</option>
       </select>
     </div>
   <table class="table table-striped">
