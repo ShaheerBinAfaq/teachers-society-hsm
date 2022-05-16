@@ -336,6 +336,11 @@ td{
         @foreach($bills as $bill)
         <h2>{{ $bill->date}}</h2>
         <h2>Receipt #: {{ $bill->receipt_number}}</h2>
+        <h2>Payment Method: {{ $bill->payment_method}}</h2>
+        <h2>Bank Name: {{ $bill->bank_name}}</h2>
+        <h2>Cheque Number: {{ $bill->check_number}}</h2>
+        <h2>Cheque Date: {{ $bill->check_date}}</h2>
+        <h2>Others: {{ $bill->others}}</h2>
     <table>
         <div>
             <thead>
@@ -440,10 +445,7 @@ td{
                 </div>
                 <div>
                     <tr>
-                        <td>FROM MR/MRS/MISS</td><br>
-                        <!-- <td><label for="mr"><input type="radio" name="from" id="mr" required>MR</label><br>
-                        <label for="mrs"> <input type="radio" name="from" id="mrs" required>MRS</label><br>
-                        <label for="miss"><input type="radio" name="from" id="miss" required>MISS</label><br> -->
+                        <td>FROM MR/MRS/MISS</td>
                         <td><input type="number" name="from" id="from" value="{{ $bill->from }}"></td>
 
                     </tr>
@@ -456,8 +458,8 @@ td{
                 </div>
                 <div>
                     <tr>
-                        <<td>ADJUSTED AMOUNT:</td>
-                        <td><input type="number" name="adjust_amount" id="adjust_amount" value="{{ $bill->adjust_amount }}></td>
+                        <td>ADJUSTED AMOUNT:</td>
+                        <td><input type="number" name="adjust_amount" id="adjust_amount" value="{{ $bill->adjust_amount }}"></td>
                     </tr>
                 </div>
                 <div>

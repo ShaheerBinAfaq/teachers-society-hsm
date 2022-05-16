@@ -68,7 +68,7 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
                 'cost_of_west_open_amount',
                 'cost_of_park_facing_amount',
                 'cost_of_road_facing_amount',
-                'total_balance',
+                'members.total_balance',
                 'penalty',
                 'phone'
                 )
