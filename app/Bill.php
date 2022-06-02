@@ -62,6 +62,9 @@ class Bill extends Model
         'others',
         'total_amount',
         'total_received',
-        'total_balance'
+        'total_balance',
+        'cost_of_extra_land_facing_amount',
+        'cost_of_extra_land_facing_received',
+        'cost_of_extra_land_facing_balance', 
     ];
 }

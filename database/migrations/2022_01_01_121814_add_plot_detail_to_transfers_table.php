@@ -14,10 +14,10 @@ class AddPlotDetailToTransfersTable extends Migration
     public function up()
     {
         Schema::table('transfers', function (Blueprint $table) {
-            $table->string('dei');
-            $table->string('survey');
-            $table->string('phase');
-            $table->string('block');
+            $table->string('dei')->nullable();
+            $table->string('survey')->nullable();
+            $table->string('phase')->nullable();
+            $table->string('block')->nullable();
         });
     }
 

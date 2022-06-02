@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransfersTable extends Migration
+class CreateAdjustTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateTransfersTable extends Migration
      */
     public function up()
     {
-        Schema::create('transfers', function (Blueprint $table) {
+        Schema::create('adjust', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('member_id')->unsigned();
-            $table->integer('transfree_id')->unsigned();
-            $table->string('plot_category')->nullable();
-            $table->string('plot_no')->nullable();
-            $table->string('msid')->nullable();
+            $table->bigInteger('adjust_from')->nullable();
+            $table->bigInteger('receipt_no')->nullable();
+            $table->bigInteger('adjust_amount')->nullable();
+            $table->string('adjust_to')->nullable();
+
         });
     }
 
@@ -31,6 +31,6 @@ class CreateTransfersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transfers');
+        Schema::dropIfExists('adjust');
     }
 }

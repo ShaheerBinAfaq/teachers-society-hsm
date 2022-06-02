@@ -22,14 +22,18 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
         'Name',
         'Fathers Name',
         'Address',
-        'Members.Date',
+        'Phone',
+        'Date Of Allotment',
         'Cost Of Land Amount',
         'Cost Of Land Received',
         'Cost Of Land Balance',
         'Lease Documentation Amount',
         'Lease Documentation Received',
         'Lease Documentation Balance',
-        'Bills.Date',
+        'Maintenance Charges Amount',
+        'Maintenance Charges Received',
+        'Maintenance Charges Balance',
+        'Last Date Of Payment',
         'Cost Of Development Amount',
         'Cost Of Development Received',
         'Cost Of Development Balance',
@@ -37,9 +41,9 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
         'Cost Of West Open Amount',
         'Cost Of Park Facing Amount',
         'Cost Of Road Facing Amount',
-        'Total Balance',
+        'Cost Of Extra Land Amount',
         'Penalty',
-        'Phone',
+        'Total Balance',
         ];
     }
     public function collection()
@@ -53,6 +57,7 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
                 'name',
                 'fathers_name',
                 'address',
+                'phone',
                 'members.allotment_date',
                 'cost_of_land_amount',
                 'cost_of_land_received',
@@ -60,6 +65,9 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
                 'lease_documentation_amount',
                 'lease_documentation_received',
                 'lease_documentation_balance',
+                'establishment_charges_amount',
+                'establishment_charges_received',
+                'establishment_charges_balance',
                 'bills.date',
                 'cost_of_development_amount',
                 'cost_of_development_received',
@@ -68,9 +76,9 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
                 'cost_of_west_open_amount',
                 'cost_of_park_facing_amount',
                 'cost_of_road_facing_amount',
-                'members.total_balance',
+                'cost_of_extra_land_facing_amount',
                 'penalty',
-                'phone'
+                'members.total_balance'
                 )
             ->get();
     }

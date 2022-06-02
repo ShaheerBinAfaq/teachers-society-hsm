@@ -14,15 +14,15 @@ class AddCostOfSideToBillsTable extends Migration
     public function up()
     {
         Schema::table('bills', function (Blueprint $table) {
-            $table->bigInteger('cost_of_road_facing_amount');
-            $table->bigInteger('cost_of_road_facing_received');
-            $table->bigInteger('cost_of_road_facing_balance');
-            $table->bigInteger('cost_of_west_open_amount');
-            $table->bigInteger('cost_of_west_open_received');
-            $table->bigInteger('cost_of_west_open_balance');
-            $table->bigInteger('cost_of_park_facing_amount');
-            $table->bigInteger('cost_of_park_facing_received');
-            $table->bigInteger('cost_of_park_facing_balance');
+            $table->bigInteger('cost_of_road_facing_amount')->nullable();
+            $table->bigInteger('cost_of_road_facing_received')->nullable();
+            $table->bigInteger('cost_of_road_facing_balance')->nullable();
+            $table->bigInteger('cost_of_west_open_amount')->nullable();
+            $table->bigInteger('cost_of_west_open_received')->nullable();
+            $table->bigInteger('cost_of_west_open_balance')->nullable();
+            $table->bigInteger('cost_of_park_facing_amount')->nullable();
+            $table->bigInteger('cost_of_park_facing_received')->nullable();
+            $table->bigInteger('cost_of_park_facing_balance')->nullable();
         });
     }
 
