@@ -13,7 +13,7 @@ class CreateAdjustTable extends Migration
      */
     public function up()
     {
-        Schema::create('adjust', function (Blueprint $table) {
+        Schema::create('adjusts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->bigInteger('adjust_from')->nullable();
@@ -31,6 +31,6 @@ class CreateAdjustTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adjust');
+        Schema::dropIfExists('adjusts');
     }
 }

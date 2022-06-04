@@ -166,6 +166,7 @@ body{
                 <a href="{{ route('due.edit',$member->id)}}" class="btn btn-primary">Report</a>
                 <!-- <a href="/report" class="btn btn-primary">Report</a> -->
                 <a href="{{ route('bill.edit',$member->id)}}" class="btn btn-primary">Bills</a>
+                <a href="{{ route('adjusts.edit',$member->id)}}" class="btn btn-primary">Adjust</a>
                 <!-- <a href="http://localhost:8000/bill/create?mid={{$member->id}}" class="btn btn-primary">Bill</a> -->
            
                 <form action="{{ route('members.destroy', $member)}}" method="post">

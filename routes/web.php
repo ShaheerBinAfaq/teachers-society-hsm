@@ -26,6 +26,7 @@ Route::resource('members', 'MembersController');
 Route::resource('transfer', 'transferController');
 Route::resource('bill', 'BillController');
 Route::resource('due', 'DueController');
+Route::resource('adjusts', 'AdjustController');
+
 // Route::view('/report', 'report.index');
-//Route::view('/transfer', 'bills/transfer');
 Route::get('export', 'MembersController@export')->name('export');
