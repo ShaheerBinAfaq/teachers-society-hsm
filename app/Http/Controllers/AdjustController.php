@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Adjust;
 use App\Member;
 use App\Bill;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -88,8 +89,8 @@ class AdjustController extends Controller
     public function edit($memberid)
     {
         $member = Member::find($memberid);
-        // $bill = DB::table('adjusts')->orderBy('created_at', 'desc')->where('member_id', $member->id)->first();
-        return view('adjusts.create', compact('member'));    
+        $members = Member::all()->sortByDesc('updated_at')->unique('msid');
+        return view('adjusts.create', compact('member', 'members'));    
     }
 
     /**

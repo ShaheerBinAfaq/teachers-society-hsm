@@ -99,6 +99,21 @@ select option {
 
         
     </style>
+    <script>
+      function msidValidate(val) {
+        var flag=true;
+        if(!(val))
+          alert("This field is mandatory");
+        else {
+          @foreach ($members as $m)
+          if({{$m->msid}} == val)
+            flag = false;
+          @endforeach
+          if(flag)
+            alert("MSID does not exist");
+        }
+      }
+    </script>
     <h1 class="display-3">Add Adjust</h1>
     <style>h1{text-align:center}</style>
   <div>
@@ -116,7 +131,7 @@ select option {
           @csrf
           <div class="form-group">    
               <label for="name">Adjust From:</label>
-              <input type="text" class="form-control" name="adjust_from" required/><br>
+              <input type="text" class="form-control" name="adjust_from" onblur="msidValidate(this.value)" required/><br>
           </div>
           <br>
           <div class="form-group">

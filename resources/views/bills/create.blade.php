@@ -255,7 +255,7 @@ $('#cost_of_park_facing_balance').val({{ $bill->cost_of_park_facing_balance }});
 $('#lease_documentation_amount').val({{ $bill->lease_documentation_amount }});
 $('#lease_documentation_received').val({{ $bill->lease_documentation_received }});
 $('#lease_documentation_balance').val({{ $bill->lease_documentation_balance }});
-$('#lease_documentation_amount').val({{ $bill->lease_documentation_amount }});
+$('#cost_of_development_amount').val({{ $bill->cost_of_development_amount }});
 $('#cost_of_development_received').val({{ $bill->cost_of_development_received }});
 $('#cost_of_development_balance').val({{ $bill->cost_of_development_balance }});
 $('#cost_of_transfer_amount').val({{ $bill->cost_of_transfer_amount }});
