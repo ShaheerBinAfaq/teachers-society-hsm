@@ -488,6 +488,12 @@ td{
                         <td><input type="number" name="cost_of_forms_balance" id="cost_of_forms_balance" value="{{ $bill->cost_of_forms_balance }}"></td>
 
                     </tr>
+                    <tr>
+                        <td>COST OF EXTRA LAND</td>
+                        <td><input type="number" name="cost_of_extra_land_facing_amount" id="cost_of_extra_land_facing_amount" value="{{ $bill->cost_of_extra_land_facing_amount}}"></td>
+                        <td><input type="number" name="cost_of_extra_land_facing_received" id="cost_of_extra_land_facing_received" value="{{ $bill->cost_of_extra_land_facing_received}}"></td>
+                        <td><input type="text" name="cost_of_extra_land_facing_balance" id="cost_of_extra_land_facing_balance" value="{{ $bill->cost_of_extra_land_facing_balance}}"></td>
+                </tr>
                 </div>
                 <div>
     
