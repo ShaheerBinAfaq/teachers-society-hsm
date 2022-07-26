@@ -66,5 +66,20 @@ class Bill extends Model
         'cost_of_extra_land_facing_amount',
         'cost_of_extra_land_facing_received',
         'cost_of_extra_land_facing_balance', 
+        'admission_fee_due',
+'share_money_due',
+'cost_of_land_due',
+'cost_of_corner_due',
+'lease_documentation_due',
+'cost_of_development_due',
+'cost_of_transfer_due',
+'establishment_charges_due',
+'miscellaneous_due',
+'cost_of_forms_due',
+'cost_of_road_facing_due',
+'cost_of_west_open_due',
+'cost_of_park_facing_due',
+'cost_of_extra_land_facing_due',
+
     ];
 }
