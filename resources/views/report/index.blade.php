@@ -347,6 +347,7 @@ td{
                 <td>NAME</td>
                 <td>AMOUNT</td>
                 <td>RECEIVED</td>
+                <td>DUE</td>
                 <td>BALANCE</td>
             </thead>
         </div>
@@ -357,6 +358,7 @@ td{
                     <td>ADMISSION FEE </td>
                     <td><input type="number" name="admission_fee_amount" id="admission_fee_amount" value="{{ $bill->admission_fee_amount }}"></td>
                     <td><input type="number" name="admission_fee_received" id="admission_fee_received" value="{{ $bill->admission_fee_received }}"></td>
+                    <td><input type="number" name="admission_fee_due" id="admission_fee_due" value="{{ $bill->admission_fee_due }}"></td>
                     <td><input type="number" name="admission_fee_balance" id="admission_fee_balance" value="{{ $bill->admission_fee_balance }}"></td>
 
                 </tr>
@@ -367,6 +369,7 @@ td{
                     <td>SHARE MONEY</td>
                     <td><input type="number" name="share_money_amount" id="share_money_amount" value="{{ $bill->share_money_amount }}"></td>
                     <td><input type="number" name="share_money_received" id="share_money_received" value="{{ $bill->share_money_received }}"></td>
+                    <td><input type="number" name="share_money_due" id="share_money_due" value="{{ $bill->share_money_due }}"></td>
                     <td><input type="number" name="share_money_balance" id="share_money_balance" value="{{ $bill->share_money_balance }}"></td>
 
                 </tr>
@@ -376,6 +379,7 @@ td{
                     <td>COST OF LAND</td>
                         <td><input type="number" name="cost_of_land_amount" id="cost_of_land_amount" value="{{ $bill->cost_of_land_amount }}"></td>
                         <td><input type="number" name="cost_of_land_received" id="cost_of_land_received" value="{{ $bill->cost_of_land_received }}"></td>
+                        <td><input type="number" name="cost_of_land_due" id="cost_of_land_due" value="{{ $bill->cost_of_land_due }}"></td>
                         <td><input type="number" name="cost_of_land_balance" id="cost_of_land_balance" value="{{ $bill->cost_of_land_balance }}"></td>
 
                 </tr>
@@ -385,6 +389,7 @@ td{
                         <td>COST OF CORNER</td>
                         <td><input type="number" name="cost_of_corner_amount" id="cost_of_corner_amount" value="{{ $bill->cost_of_corner_amount }}"></td>
                         <td><input type="number" name="cost_of_corner_received" id="cost_of_corner_received" value="{{ $bill->cost_of_corner_received }}"></td>
+                        <td><input type="number" name="cost_of_corner_due" id="cost_of_corner_due" value="{{ $bill->cost_of_corner_due }}"></td>
                         <td><input type="number" name="cost_of_corner_balance" id="cost_of_corner_balance" value="{{ $bill->cost_of_corner_balance }}"></td>
 
                     </tr>
@@ -394,6 +399,7 @@ td{
                         <td>COST OF ROAD FACING</td>
                         <td><input type="number" name="cost_of_road_facing_amount" id="cost_of_road_facing_amount" value="{{ $bill->cost_of_road_facing_amount }}"></td>
                         <td><input type="number" name="cost_of_road_facing_received" id="cost_of_road_facing_received" value="{{ $bill->cost_of_road_facing_received }}"></td>
+                        <td><input type="number" name="cost_of_road_facing_due" id="cost_of_road_facing_due" value="{{ $bill->cost_of_road_facing_due }}"></td>
                         <td><input type="number" name="cost_of_road_facing_balance" id="cost_of_road_facing_balance" value="{{ $bill->cost_of_road_facing_balance }}"></td>
 
                     </tr>
@@ -403,6 +409,7 @@ td{
                         <td>COST OF WEST OPEN</td>
                         <td><input type="number" name="cost_of_west_open_amount" id="cost_of_west_open_amount" value="{{ $bill->cost_of_west_open_amount }}"></td>
                         <td><input type="number" name="cost_of_west_open_received" id="cost_of_west_open_received" value="{{ $bill->cost_of_west_open_received }}"></td>
+                        <td><input type="number" name="cost_of_west_open_due" id="cost_of_west_open_due" value="{{ $bill->cost_of_west_open_due }}"></td>
                         <td><input type="number" name="cost_of_west_open_balance" id="cost_of_west_open_balance" value="{{ $bill->cost_of_west_open_balance }}"></td>
 
                     </tr>
@@ -412,6 +419,7 @@ td{
                         <td>COST OF PARK FACING</td>
                         <td><input type="number" name="cost_of_park_facing_amount" id="cost_of_park_facing_amount" value="{{ $bill->cost_of_park_facing_amount }}"></td>
                         <td><input type="number" name="cost_of_park_facing_received" id="cost_of_park_facing_received" value="{{ $bill->cost_of_park_facing_received }}"></td>
+                        <td><input type="number" name="cost_of_park_facing_due" id="cost_of_park_facing_due" value="{{ $bill->cost_of_park_facing_due }}"></td>
                         <td><input type="number" name="cost_of_park_facing_balance" id="cost_of_park_facing_balance" value="{{ $bill->cost_of_park_facing_balance }}"></td>
 
                     </tr>
@@ -421,6 +429,7 @@ td{
                     <td>LEASE DOCUMENTATION</td>
                     <td><input type="number" name="lease_documentation_amount" id="lease_documentation_amount" value="{{ $bill->lease_documentation_amount }}"></td>
                     <td><input type="number" name="lease_documentation_received" id="lease_documentation_received" value="{{ $bill->lease_documentation_received }}"></td>
+                    <td><input type="number" name="lease_documentation_due" id="lease_documentation_due" value="{{ $bill->lease_documentation_due }}"></td>
                     <td><input type="number" name="lease_documentation_balance" id="lease_documentation_balance" value="{{ $bill->lease_documentation_balance }}"></td>
 
                     </tr>
@@ -430,6 +439,7 @@ td{
                         <td>COST OF DEVELOPMENT</td>
                         <td><input type="number" name="cost_of_development_amount" id="cost_of_development_amount" value="{{ $bill->cost_of_development_amount }}"></td>
                         <td><input type="number" name="cost_of_development_received" id="cost_of_development_received" value="{{ $bill->cost_of_development_received }}"></td>
+                        <td><input type="number" name="cost_of_development_due" id="cost_of_development_due" value="{{ $bill->cost_of_development_due }}"></td>
                         <td><input type="number" name="cost_of_development_balance" id="cost_of_development_balance" value="{{ $bill->cost_of_development_balance }}"></td>
 
                     </tr>
@@ -439,6 +449,7 @@ td{
                         <td>COST OF TRANSFER</td>
                         <td><input type="number" name="cost_of_transfer_amount" id="cost_of_transfer_amount" value="{{ $bill->cost_of_transfer_amount }}"></td>
                         <td><input type="number" name="cost_of_transfer_received" id="cost_of_transfer_received" value="{{ $bill->cost_of_transfer_received }}"></td>
+                        <td><input type="number" name="cost_of_transfer_due" id="cost_of_transfer_due" value="{{ $bill->cost_of_transfer_due }}"></td>
                         <td><input type="number" name="cost_of_transfer_balance" id="cost_of_transfer_balance" value="{{ $bill->cost_of_transfer_balance }}"></td>
 
                     </tr>
@@ -467,6 +478,7 @@ td{
                         <td>ESTABLISHMENT CHARGES / OFFICE EMPLOYEE /<br /> OFFICE MAINTENANCE CHARGES</td>
                         <td><input type="number" name="establishment_charges_amount" id="establishment_charges_amount" value="{{ $bill->establishment_charges_amount }}"></td>
                         <td><input type="number" name="establishment_charges_received" id="establishment_charges_received" value="{{ $bill->establishment_charges_received }}"></td>
+                        <td><input type="number" name="establishment_charges_due" id="establishment_charges_due" value="{{ $bill->establishment_charges_due }}"></td>
                         <td><input type="number" name="establishment_charges_balance" id="establishment_charges_balance" value="{{ $bill->establishment_charges_balance }}"></td>
 
                     </tr>
@@ -476,6 +488,7 @@ td{
                         <td>MISCELLANEOUS</td>
                         <td><input type="number" name="miscellaneous_amount" id="miscellaneous_amount" value="{{ $bill->miscellaneous_amount }}"></td>
                         <td><input type="number" name="miscellaneous_received" id="miscellaneous_received" value="{{ $bill->miscellaneous_received }}"></td>
+                        <td><input type="number" name="miscellaneous_due" id="miscellaneous_due" value="{{ $bill->miscellaneous_due }}"></td>
                         <td><input type="number" name="miscellaneous_balance" id="miscellaneous_balance" value="{{ $bill->miscellaneous_balance }}"></td>
 
                     </tr>
@@ -485,6 +498,7 @@ td{
                         <td>COST OF FORMS</td>
                         <td><input type="number" name="cost_of_forms_amount" id="cost_of_forms_amount" value="{{ $bill->cost_of_forms_amount }}"></td>
                         <td><input type="number" name="cost_of_forms_received" id="cost_of_forms_received" value="{{ $bill->cost_of_forms_received }}"></td>
+                        <td><input type="number" name="cost_of_forms_due" id="cost_of_forms_due" value="{{ $bill->cost_of_forms_due }}"></td>
                         <td><input type="number" name="cost_of_forms_balance" id="cost_of_forms_balance" value="{{ $bill->cost_of_forms_balance }}"></td>
 
                     </tr>
@@ -492,6 +506,7 @@ td{
                         <td>COST OF EXTRA LAND</td>
                         <td><input type="number" name="cost_of_extra_land_facing_amount" id="cost_of_extra_land_facing_amount" value="{{ $bill->cost_of_extra_land_facing_amount}}"></td>
                         <td><input type="number" name="cost_of_extra_land_facing_received" id="cost_of_extra_land_facing_received" value="{{ $bill->cost_of_extra_land_facing_received}}"></td>
+                        <td><input type="number" name="cost_of_extra_land_facing_due" id="cost_of_extra_land_facing_due" value="{{ $bill->cost_of_extra_land_facing_due}}"></td>
                         <td><input type="text" name="cost_of_extra_land_facing_balance" id="cost_of_extra_land_facing_balance" value="{{ $bill->cost_of_extra_land_facing_balance}}"></td>
                 </tr>
                 </div>

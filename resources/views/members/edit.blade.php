@@ -7,8 +7,38 @@
     $("#survey").val('{{ $member->survey }}');
     $("#phase").val('{{ $member->phase }}');
     $("#block").val('{{ $member->block }}');
-
+    $("#status").val('{{ $member->status }}');
+    //setStatusChecks();
     });
+    function checkStatus(elemId){
+      var chbxvalue = $('label[for="'+elemId+'"]').text();
+      var statusvalue = $('#status').val();
+      var values = statusvalue.split(', ');
+      console.log('values bf', values)
+      var filteredValArray = values.filter((value) => {
+        return value != chbxvalue;
+      });
+      var insertCheck = values.filter((value) => {
+        return value == chbxvalue;
+      });
+      console.log('values af', filteredValArray);
+      statusvalue = filteredValArray.toString();
+      if(insertCheck.length == 0){
+        if(statusvalue){
+          statusvalue += ',';
+        }
+        statusvalue += chbxvalue;
+      }
+      $('#status').val(statusvalue);
+    }
+    function setStatusChecks(){
+      var statusvalue = $('#status').val();
+      var values = statusvalue.split(', ');
+      console.log(values);
+      values.map((value) => {
+        $('#' + value).prop('checked', true);
+      });
+    }
 </script>
 <style type="text/css">
          label{
@@ -36,7 +66,7 @@
   background-position: center;
         }
         div{
-text-align: center;
+        text-align: center;
         }
         select{
             text-align: center;
@@ -45,69 +75,69 @@ text-align: center;
         
          div {
   
-  /* background-color: red;
-  animation-name: example;
-  animation-duration: 10s;
-  animation-delay: 2s;
-  animation-iteration-count: infinite;
-}
+      /* background-color: red;
+      animation-name: example;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+    }
 
-@keyframes example {
-  0%   {background-color: red;}
-  25%  {background-color: yellow;}
-  50%  {background-color: aqua;}
-  100% {background-color: green;} */
+    @keyframes example {
+      0%   {background-color: red;}
+      25%  {background-color: yellow;}
+      50%  {background-color: aqua;}
+      100% {background-color: green;} */
 
-} */
-.btn {
-  
-  
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
+    } */
+    .btn {
+      
+      
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
 
-  input[type=text], input[type=number]  , input[type=textarea], input[type=tel], input[type=email] , select [type=option] {
-    color:white;
-  width: 30%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border-color: white;
-  background: transparent;
-  border-radius: 10px;
-}
+      input[type=text], input[type=number]  , input[type=textarea], input[type=tel], input[type=email] , select [type=option] {
+        color:white;
+      width: 30%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border-color: white;
+      background: transparent;
+      border-radius: 10px;
+    }
 
-  /* div{
-  background-image: url("../images/teacher.jpg");
-  background-size: cover;
-  }  */
-select{
-  color:white;
-  
-  width: 31.5%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border-color: white;
-  background: transparent; 
-  border-radius: 10px;
-}
-select option {
-    background-color: grey;
-    font-weight: bold;
-    color: white;
-}
-
-
+      /* div{
+      background-image: url("../images/teacher.jpg");
+      background-size: cover;
+      }  */
+    select{
+      color:white;
+      
+      width: 31.5%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border-color: white;
+      background: transparent; 
+      border-radius: 10px;
+    }
+    select option {
+        background-color: grey;
+        font-weight: bold;
+        color: white;
+    }
 
 
 
-        
-    </style>
+
+
+            
+</style>
 
 <div class="row">
-<img src="teacher.jfif" alt="teacher" width="1000px"  style="display: block; margin-left: auto;margin-right:auto;">
+<!-- <img src="teacher.jfif" alt="teacher" width="1000px"  style="display: block; margin-left: auto;margin-right:auto;"> -->
 
     <div class="col-sm-8 offset-sm-2">
         <h1 class="display-3">Update a member</h1>
@@ -213,6 +243,18 @@ select option {
                 <label for="">Allotment Date</label>
                 <input type="date" name="allotment_date" id="allotment_date" value={{ $member->allotment_date }}>
             </div>
+            <!-- <div>
+              <input type="text" id="status" name="status" style="display:;" />
+                <label for="">Status</label>
+                <br>
+                <input type="checkbox" id="NewMember" onClick="checkStatus(this.id)" /><label for="NewMember">New Member</label><br>
+                <input type="checkbox" id="Alottee" onClick="checkStatus(this.id)" /><label for="Alottee">Alottee</label><br>
+                <input type="checkbox" id="Lease" onClick="checkStatus(this.id)" /><label for="Lease">Lease</label><br>
+                <input type="checkbox" id="Defaulter" onClick="checkStatus(this.id)" /><label for="Defaulter">Defaulter</label><br>
+                <input type="checkbox" id="Transferred" onClick="checkStatus(this.id)" /><label for="Transferred">Transferred</label><br>
+                <input type="checkbox" id="Return" onClick="checkStatus(this.id)" /><label for="Return">Return</label><br>
+                <input type="checkbox" id="Adjustment" onClick="checkStatus(this.id)" /><label for="Adjustment">Adjustment</label><br>
+            </div> -->
 
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

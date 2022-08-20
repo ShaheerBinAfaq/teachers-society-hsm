@@ -276,20 +276,20 @@ $('#cost_of_forms_amount').val({{ $bill->cost_of_forms_amount }});
 $('#cost_of_forms_received').val({{ $bill->cost_of_forms_received }});
 $('#cost_of_forms_balance').val({{ $bill->cost_of_forms_balance }});
 $('#ledger_account_no').val({{ $bill->ledger_account_no }});
-// $('#admission_fee_amount').val({{ $bill->admission_fee_balance }});
-// $('#share_money_amount').val({{ $bill->share_money_balance }});
-// $('#cost_of_land_amount').val({{ $bill->cost_of_land_balance }});
-// $('#cost_of_corner_amount').val({{ $bill->cost_of_corner_balance }});
-// $('#cost_of_road_facing_amount').val({{ $bill->cost_of_road_facing_balance }});
-// $('#cost_of_extra_land_facing_amount').val({{ $bill->cost_of_extra_land_facing_balance }});
-// $('#cost_of_west_open_amount').val({{ $bill->cost_of_west_open_balance }});
-// $('#cost_of_park_facing_amount').val({{ $bill->cost_of_park_facing_balance }});
-// $('#lease_documentation_amount').val({{ $bill->lease_documentation_balance }});
-// $('#lease_documentation_amount').val({{ $bill->lease_documentation_balance }});
-// $('#cost_of_transfer_amount').val({{ $bill->cost_of_transfer_balance }});
-// $('#establishment_charges_amount').val({{ $bill->establishment_charges_balance }});
-// $('#miscellaneous_amount').val({{ $bill->miscellaneous_balance }});
-// $('#cost_of_forms_amount').val({{ $bill->cost_of_forms_balance }});
+$('#admission_fee_due').val({{ $bill->admission_fee_due }});
+$('#share_money_due').val({{ $bill->share_money_due }});
+$('#cost_of_land_due').val({{ $bill->cost_of_land_due }});
+$('#cost_of_corner_due').val({{ $bill->cost_of_corner_due }});
+$('#cost_of_road_facing_due').val({{ $bill->cost_of_road_facing_due }});
+$('#cost_of_extra_land_facing_due').val({{ $bill->cost_of_extra_land_facing_due }});
+$('#cost_of_west_open_due').val({{ $bill->cost_of_west_open_due }});
+$('#cost_of_park_facing_due').val({{ $bill->cost_of_park_facing_due }});
+$('#lease_documentation_due').val({{ $bill->lease_documentation_due }});
+$('#lease_documentation_due').val({{ $bill->lease_documentation_due }});
+$('#cost_of_transfer_due').val({{ $bill->cost_of_transfer_due }});
+$('#establishment_charges_due').val({{ $bill->establishment_charges_due }});
+$('#miscellaneous_due').val({{ $bill->miscellaneous_due }});
+$('#cost_of_forms_due').val({{ $bill->cost_of_forms_due }});
 
     @else
     @endif
@@ -385,6 +385,7 @@ function fnPayMethod(val){
                 <td>NAME</td>
                 <td>AMOUNT</td>
                 <td>RECEIVED</td>
+                <td>DUE</td>
                 <td>BALANCE</td>
             </thead>
         <div>
@@ -394,6 +395,7 @@ function fnPayMethod(val){
                     <td>ADMISSION FEE </td>
                     <td><input type="number" name="admission_fee_amount" id="admission_fee_amount"></td>
                     <td><input type="number" name="admission_fee_received" id="admission_fee_received"></td>
+                    <td><input type="number" name="admission_fee_due" id="admission_fee_due" readonly></td>
                     <td><input type="text" name="admission_fee_balance" id="admission_fee_balance" readonly></td>
                 </tr>
                 </div>
@@ -403,6 +405,7 @@ function fnPayMethod(val){
                     <td>SHARE MONEY</td>
                     <td><input type="number" name="share_money_amount" id="share_money_amount"></td>
                     <td><input type="number" name="share_money_received" id="share_money_received"></td>
+                    <td><input type="number" name="share_money_due" id="share_money_due" readonly></td>
                     <td><input type="text" name="share_money_balance" id="share_money_balance"readonly  ></td>
                 </tr>
                 </div>
@@ -411,6 +414,7 @@ function fnPayMethod(val){
                     <td>COST OF LAND</td>
                         <td><input type="number" name="cost_of_land_amount" id="cost_of_land_amount"></td>
                         <td><input type="number" name="cost_of_land_received" id="cost_of_land_received"></td>
+                        <td><input type="number" name="cost_of_land_due" id="cost_of_land_due" readonly></td>
                         <td><input type="text" name="cost_of_land_balance" id="cost_of_land_balance"readonly></td>
                 </tr>
                 </div>
@@ -419,6 +423,7 @@ function fnPayMethod(val){
                         <td>COST OF CORNER</td>
                         <td><input type="number" name="cost_of_corner_amount" id="cost_of_corner_amount"></td>
                         <td><input type="number" name="cost_of_corner_received" id="cost_of_corner_received"></td>
+                        <td><input type="number" name="cost_of_corner_due" id="cost_of_corner_due" readonly></td>
                         <td><input type="text" name="cost_of_corner_balance" id="cost_of_corner_balance"readonly></td>
                     </tr>
                 </div>
@@ -426,18 +431,21 @@ function fnPayMethod(val){
                         <td>COST OF ROAD FACING</td>
                         <td><input type="number" name="cost_of_road_facing_amount" id="cost_of_road_facing_amount"></td>
                         <td><input type="number" name="cost_of_road_facing_received" id="cost_of_road_facing_received"></td>
+                        <td><input type="number" name="cost_of_road_facing_due" id="cost_of_road_facing_due" readonly></td>
                         <td><input type="text" name="cost_of_road_facing_balance" id="cost_of_road_facing_balance"readonly></td>
                 </tr>
                 <tr>
                         <td>COST OF WEST OPEN</td>
                         <td><input type="number" name="cost_of_west_open_amount" id="cost_of_west_open_amount"></td>
                         <td><input type="number" name="cost_of_west_open_received" id="cost_of_west_open_received"></td>
+                        <td><input type="number" name="cost_of_west_open_due" id="cost_of_west_open_due" readonly></td>
                         <td><input type="text" name="cost_of_west_open_balance" id="cost_of_west_open_balance"readonly></td>
                 </tr>
                 <tr>
                         <td>COST OF PARK FACING</td>
                         <td><input type="number" name="cost_of_park_facing_amount" id="cost_of_park_facing_amount"></td>
                         <td><input type="number" name="cost_of_park_facing_received" id="cost_of_park_facing_received"></td>
+                        <td><input type="number" name="cost_of_park_facing_due" id="cost_of_park_facing_due" readonly></td>
                         <td><input type="text" name="cost_of_park_facing_balance" id="cost_of_park_facing_balance"readonly></td>
 
                     </tr>   
@@ -446,6 +454,7 @@ function fnPayMethod(val){
                     <td>LEASE DOCUMENTATION</td>
                     <td><input type="number" name="lease_documentation_amount" id="lease_documentation_amount"></td>
                     <td><input type="number" name="lease_documentation_received" id="lease_documentation_received"></td>
+                    <td><input type="number" name="lease_documentation_due" id="lease_documentation_due" readonly></td>
                     <td><input type="text" name="lease_documentation_balance" id="lease_documentation_balance"readonly></td>
                     </tr>
                 </div>
@@ -454,6 +463,7 @@ function fnPayMethod(val){
                         <td>COST OF DEVELOPMENT</td>
                         <td><input type="number" name="cost_of_development_amount" id="cost_of_development_amount"></td>
                         <td><input type="number" name="cost_of_development_received" id="cost_of_development_received"></td>
+                        <td><input type="number" name="cost_of_development_due" id="cost_of_development_due" readonly></td>
                         <td><input type="text" name="cost_of_development_balance" id="cost_of_development_balance"readonly></td>
                     </tr>
                 </div>
@@ -462,6 +472,7 @@ function fnPayMethod(val){
                         <td>COST OF TRANSFER</td>
                         <td><input type="number" name="cost_of_transfer_amount" id="cost_of_transfer_amount"></td>
                         <td><input type="number" name="cost_of_transfer_received" id="cost_of_transfer_received"></td>
+                        <td><input type="number" name="cost_of_transfer_due" id="cost_of_transfer_due" readonly></td>
                         <td><input type="text" name="cost_of_transfer_balance" id="cost_of_transfer_balance"readonly></td>
                     </tr>
                 </div>
@@ -492,6 +503,7 @@ function fnPayMethod(val){
                         <td>ESTABLISHMENT CHARGES / OFFICE EMPLOYEE /<br /> OFFICE MAINTENANCE CHARGES</td>
                         <td><input type="number" name="establishment_charges_amount" id="establishment_charges_amount"></td>
                         <td><input type="number" name="establishment_charges_received" id="establishment_charges_received"></td>
+                        <td><input type="number" name="establishment_charges_due" id="establishment_charges_due" readonly></td>
                         <td><input type="text" name="establishment_charges_balance" id="establishment_charges_balance"readonly></td>
                     </tr>
                 </div>
@@ -500,6 +512,7 @@ function fnPayMethod(val){
                         <td>MISCELLANEOUS</td>
                         <td><input type="number" name="miscellaneous_amount" id="miscellaneous_amount"></td>
                         <td><input type="number" name="miscellaneous_received" id="miscellaneous_received"></td>
+                        <td><input type="number" name="miscellaneous_due" id="miscellaneous_due" readonly></td>
                         <td><input type="text" name="miscellaneous_balance" id="miscellaneous_balance"readonly></td>
                     </tr>
                 </div>
@@ -508,12 +521,14 @@ function fnPayMethod(val){
                         <td>COST OF FORMS</td>
                         <td><input type="number" name="cost_of_forms_amount" id="cost_of_forms_amount"></td>
                         <td><input type="number" name="cost_of_forms_received" id="cost_of_forms_received"></td>
+                        <td><input type="number" name="cost_of_forms_due" id="cost_of_forms_due" readonly></td>
                         <td><input type="text" name="cost_of_forms_balance" id="cost_of_forms_balance" readonly></td>
                     </tr>
                     <tr>
                         <td>COST OF EXTRA LAND</td>
                         <td><input type="number" name="cost_of_extra_land_facing_amount" id="cost_of_extra_land_facing_amount"></td>
                         <td><input type="number" name="cost_of_extra_land_facing_received" id="cost_of_extra_land_facing_received"></td>
+                        <td><input type="number" name="cost_of_extra_land_facing_due" id="cost_of_extra_land_facing_due" readonly></td>
                         <td><input type="text" name="cost_of_extra_land_facing_balance" id="cost_of_extra_land_facing_balance"readonly></td>
                 </tr>
                 </div>

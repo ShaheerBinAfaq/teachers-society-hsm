@@ -142,7 +142,7 @@ select option {
           <br>
           <div class="form-group">
               <label for="phone">Phone:</label> 
-              <input type="tel" class="form-control" name="phone" pattern="[0-9]{11}" title="please enter cnic in right format"> </div>                         
+              <input type="tel" class="form-control" name="phone" pattern="[0-9]{11}" title="please enter phone no in right format"> </div>                         
           </div>
           <br>
           <center>
