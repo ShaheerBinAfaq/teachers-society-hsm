@@ -213,7 +213,37 @@ td{
 
     <form action="">
         <div>
-            <h1><center >MEMBER BIO DATA  </center></h1>
+            @foreach($memberslist as $m)
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>{{$m->name}}</td>
+                </tr>
+                <tr>
+                    <td>msid</td>
+                    <td>{{$m->msid}}</td>
+                </tr>
+                <tr>
+                    <td>cnic</td>
+                    <td>{{$m->cnic}}</td>
+                </tr>
+                <tr>
+                    <td>S/o D/o W/o</td>
+                    <td>{{$m->fathers_name}}</td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td>{{$m->address}}</td>
+                </tr>
+                <tr>
+                    <td>phone no</td>
+                    <td>{{$m->phone}}</td>
+                </tr>
+                
+            </table>
+            @endforeach
+
+            <!-- <h1><center >MEMBER BIO DATA  </center></h1>
             </div>
             <form action="" method="get">
             <div>
@@ -330,7 +360,7 @@ td{
         <label for="allotment_no">ALLOTMENT NO:</label>
         <input type="number" name="allotment_no" id="allotment_no" required>
         
-        </div>
+        </div> -->
 <div><center><h1>Billing details according to the date</h1></center>
     <center>
         @foreach($bills as $bill)
