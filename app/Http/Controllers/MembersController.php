@@ -64,7 +64,8 @@ class MembersController extends Controller
             'plot_no' => $request->get('plot_no'),
             'plot_category' => $request->get('plot_category'),
             'date' => $request->get('date'),
-            'allotment_date' => $request->get('allotment_date')
+            'allotment_date' => $request->get('allotment_date'),
+            'status' => $request->get('status')
         ]);
         $member->save();
         return redirect('/members')->with('success', 'Member saved!');
@@ -122,6 +123,7 @@ class MembersController extends Controller
         $member->plot_category = $request->get('plot_category');
         $member->date = $request->get('date');
         $member->allotment_date = $request->get('allotment_date');
+        $member->status = $request->get('status');
 
         $member->save();
         return redirect('/members')->with('success', 'Member updated!');

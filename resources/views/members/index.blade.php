@@ -178,6 +178,23 @@ body{
         </tr>
         @endforeach
     </tbody>
+    <tfoot>
+        <tr>
+          <!-- <td>SR NO</td> -->
+          <th>MS-ID</th>
+          <th>PLOT NO</th>
+          <th></th>
+          <th>Name</th>
+          <th>CNIC</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>Status</th>
+          <th></th>
+          <th></th>
+        </tr>
+    </tfoot>
   </table>
 <div>
 </div>

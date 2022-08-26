@@ -58,10 +58,29 @@ textarea {
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
 <script>
 $(document).ready( function () {
+  $('.table tfoot th').each(function () {
+        var title = $(this).text();
+        if(title)
+          $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+    });
     var table = $('.table').DataTable({
       paging: false,
       searching: true,
-      ordering: true
+      ordering: true,
+      initComplete: function () {
+            // Apply the search
+            this.api()
+                .columns()
+                .every(function () {
+                    var that = this;
+ 
+                    $('input', this.footer()).on('keyup change clear', function () {
+                        if (that.search() !== this.value) {
+                            that.search(this.value).draw();
+                        }
+                    });
+                });
+        }
     });
 } );
 </script>

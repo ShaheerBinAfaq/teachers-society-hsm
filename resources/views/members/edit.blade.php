@@ -243,6 +243,18 @@
                 <label for="">Allotment Date</label>
                 <input type="date" name="allotment_date" id="allotment_date" value={{ $member->allotment_date }}>
             </div>
+            <div>
+            <label for="status">Status:</label>
+            <select name="status" id="status">
+                <option value="select status">SELECT Status</option>
+                <option value="New Member">New Member</option>
+                <option value="Alottee">Alottee</option>
+                <option value="Defaulter">Defaulter</option>
+                <option value="Transferred">Transferred</option>
+                <option value="Return">Return</option>
+                <option value="Adjustment">Adjustment</option>
+            </select>
+          </div>
             <!-- <div>
               <input type="text" id="status" name="status" style="display:;" />
                 <label for="">Status</label>
