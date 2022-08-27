@@ -119,7 +119,7 @@ body{
     <a style="margin: 19px;" href="{{ route('members.create')}}" class="btn btn-primary">New Member</a>
     </div>
     <a href="{{ route('export') }}">Export Member Data</a>
-    <div>
+    <!-- <div>
       <select id="statusFilter" onchange="fnStatusFilter()">
         <option value="Show all">Show all</option>
         <option value="Defaulter">Defaulter</option>
@@ -127,7 +127,7 @@ body{
         <option value="Alottee">Alottee</option>
         <option value="Returned">Returned</option>
       </select>
-    </div>
+    </div> -->
   <table class="table table-striped">
     <thead>
         <tr>

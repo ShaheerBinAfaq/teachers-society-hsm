@@ -64,7 +64,7 @@ $(document).ready( function () {
           $(this).html('<input type="text" placeholder="Search ' + title + '" />');
     });
     var table = $('.table').DataTable({
-      paging: false,
+      paging: true,
       searching: true,
       ordering: true,
       initComplete: function () {
