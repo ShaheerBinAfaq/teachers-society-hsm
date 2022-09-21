@@ -90,8 +90,8 @@ class DueController extends Controller
     public function edit($memberid)
     {
         $member = Member::find($memberid);
-        $memberslist = DB::table('members')->orderBy('updated_at')->where('msid', $member->msid)->get();
-        $bills = DB::table('bills')->orderBy('created_at', 'desc')->where('member_id', $member->id)->get();
+        $memberslist = DB::table('members')->orderBy('transfer_no')->where('msid', $member->msid)->get();
+        $bills = DB::table('bills')->orderBy('created_at', 'desc')->where('msid', $member->msid)->get();
         return view('report.index', compact('member', 'bills', 'memberslist')); 
     }
 

@@ -65,7 +65,8 @@ class MembersController extends Controller
             'plot_category' => $request->get('plot_category'),
             'date' => $request->get('date'),
             'allotment_date' => $request->get('allotment_date'),
-            'status' => $request->get('status')
+            'status' => $request->get('status'),
+            'transfer_no' => '0',
         ]);
         $member->save();
         return redirect('/members')->with('success', 'Member saved!');

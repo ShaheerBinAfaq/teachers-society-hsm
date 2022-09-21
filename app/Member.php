@@ -27,6 +27,8 @@ class Member extends Model
         'date',  
         'allotment_date',  
         'total_balance',  
+        'transfer_no',
+        'transfer_date',
     ];
     public function bills()
     {

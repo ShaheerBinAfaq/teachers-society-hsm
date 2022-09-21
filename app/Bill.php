@@ -80,6 +80,7 @@ class Bill extends Model
 'cost_of_west_open_due',
 'cost_of_park_facing_due',
 'cost_of_extra_land_facing_due',
+'msid',
 
     ];
 }
