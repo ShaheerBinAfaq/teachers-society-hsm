@@ -227,6 +227,7 @@ select option {
               <option value="Transferred">Transferred</option>
               <option value="Return">Return</option>
               <option value="Adjustment">Adjustment</option>
+              <option value="Lease">Lease</option>
           </select>
         </div>
           <button type="submit" >Add Member</button>

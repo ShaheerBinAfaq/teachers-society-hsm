@@ -23,6 +23,7 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
         'Fathers Name',
         'Address',
         'Phone',
+        'Allotment Number',
         'Date Of Allotment',
         'Cost Of Land Amount',
         'Cost Of Land Received',
@@ -63,11 +64,12 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
             ->whereRaw('bills.id IN (SELECT MAX(id) FROM bills GROUP BY member_id) AND members.updated_at IN (SELECT MAX(updated_at) FROM members GROUP BY msid)')
             ->select(
                 'status',
-                'msid',
+                'members.msid',
                 'name',
                 'fathers_name',
                 'address',
                 'phone',
+                'members.allotment_no',
                 'members.allotment_date',
                 'admission_fee_amount',
         'admission_fee_received',
