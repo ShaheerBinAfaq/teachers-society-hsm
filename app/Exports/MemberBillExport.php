@@ -61,7 +61,7 @@ class MemberBillExport implements FromCollection, WithHeadings, WithStrictNullCo
     {
         return DB::table('members')
             ->leftJoin('bills', 'members.id', '=', 'bills.member_id')
-            ->whereRaw('bills.id IN (SELECT MAX(id) FROM bills GROUP BY member_id) AND members.updated_at IN (SELECT MAX(updated_at) FROM members GROUP BY msid)')
+            ->whereRaw('bills.id IN (SELECT MAX(id) FROM bills GROUP BY member_id) AND members.id IN (SELECT MAX(id) FROM members GROUP BY msid)')
             ->select(
                 'status',
                 'members.msid',

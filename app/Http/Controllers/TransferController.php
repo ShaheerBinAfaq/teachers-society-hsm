@@ -86,6 +86,7 @@ class TransferController extends Controller
         $transfree->phase = $member->phase;
         $transfree->block = $member->block;
         $transfree->transfer_no = $tran_no;
+        $transfree->transfer_date = $request->get('date');
         $transfree->save();
         //setting member status of return
         // if($request->get('status') != 'Transferred') {
