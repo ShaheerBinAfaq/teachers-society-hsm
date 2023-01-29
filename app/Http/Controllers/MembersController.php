@@ -119,6 +119,10 @@ class MembersController extends Controller
         $member->phone = $request->get('phone');
         $member->email = $request->get('email');
         $member->msid = $request->get('msid');
+        $member->dei = $request->get('dei');
+        $member->survey = $request->get('survey');
+        $member->phase = $request->get('phase');
+        $member->block = $request->get('block');
         $member->allotment_no = $request->get('allotment_no');
         $member->plot_no = $request->get('plot_no');
         $member->plot_category = $request->get('plot_category');
