@@ -88,9 +88,9 @@ $(document).ready( function () {
 </head>
 <body>
   <div class="topnav">
-  <a href="http://localhost:8000/members">Members</a>
-  <a href="http://localhost:8000/transfer">Transfers</a>
-  <a href="http://localhost:8000/bill">Bills</a>
+  <a href="{{ route('members.index')}}">Members</a>
+  <a href="{{ route('transfer.index')}}">Transfers</a>
+  <a href="{{ route('bill.index')}}">Bills</a>
   <!-- <a href="C:\Users\nm1\Downloads\report (1).html">Report</a> -->
 </div>
   <div class="container">
