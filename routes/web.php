@@ -23,7 +23,7 @@ Route::get('/report', function () {
 // Route::get('/report', [DueController::class, 'report']);
 
 Route::resource('members', 'MembersController');
-Route::resource('transfer', 'transferController');
+Route::resource('transfer', 'TransferController');
 Route::resource('bill', 'BillController');
 Route::resource('due', 'DueController');
 Route::resource('adjusts', 'AdjustController');
